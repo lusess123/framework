@@ -8,3 +8,8 @@ E:\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Web.pdb
 E:\git\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.csprojResolveAssemblyReference.cache
 E:\git\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.dll
 E:\git\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.pdb
+E:\git\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Web.dll
+E:\git\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Web.pdb
+E:\git\src\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.csprojResolveAssemblyReference.cache
+E:\git\src\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.dll
+E:\git\src\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.pdb

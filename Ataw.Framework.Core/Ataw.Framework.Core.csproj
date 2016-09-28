@@ -57,23 +57,21 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\EF\AtawEf\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\lib\EF\AtawEf\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\lib\EF\AtawEf\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\..\..\lib\EF\AtawEf\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\ioc\Microsoft.Practices.Unity.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\lib\ioc\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\json\Net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\lib\json\Net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SocketIOClient">
-      <HintPath>..\..\lib\WebSockect\SocketIOClient.dll</HintPath>
+      <HintPath>..\..\..\..\lib\WebSockect\SocketIOClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -86,9 +84,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebSocket4Net, Version=0.7.0.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\WebSockect\WebSocket4Net.dll</HintPath>
+    <Reference Include="WebSocket4Net">
+      <HintPath>..\..\..\..\lib\WebSockect\WebSocket4Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

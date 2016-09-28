@@ -31,3 +31,8 @@ E:\Products\_output\library\Ataw.Framework.Web\Ataw.FrameworkExtend.Core.pdb
 E:\git\modules\framework\Ataw.FrameworkExtend.Core\obj\Debug\Ataw.FrameworkExtend.Core.csprojResolveAssemblyReference.cache
 E:\git\modules\framework\Ataw.FrameworkExtend.Core\obj\Debug\Ataw.FrameworkExtend.Core.dll
 E:\git\modules\framework\Ataw.FrameworkExtend.Core\obj\Debug\Ataw.FrameworkExtend.Core.pdb
+E:\git\src\modules\framework\Ataw.FrameworkExtend.Core\obj\Debug\Ataw.FrameworkExtend.Core.csprojResolveAssemblyReference.cache
+E:\git\src\modules\framework\Ataw.FrameworkExtend.Core\obj\Debug\Ataw.FrameworkExtend.Core.dll
+E:\git\src\modules\framework\Ataw.FrameworkExtend.Core\obj\Debug\Ataw.FrameworkExtend.Core.pdb
+E:\git\Products\_output\library\Ataw.Framework.Web\Ataw.FrameworkExtend.Core.dll
+E:\git\Products\_output\library\Ataw.Framework.Web\Ataw.FrameworkExtend.Core.pdb

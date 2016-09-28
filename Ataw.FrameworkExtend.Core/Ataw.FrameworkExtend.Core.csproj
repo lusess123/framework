@@ -32,16 +32,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aspose.Cells">
-      <HintPath>..\..\..\..\Products\_output\lib\aspose\Aspose.Cells.dll</HintPath>
+      <HintPath>..\..\..\..\lib\aspose\Aspose.Cells.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Pdf">
-      <HintPath>..\..\..\..\Products\_output\lib\aspose\Aspose.Pdf.dll</HintPath>
+      <HintPath>..\..\..\..\lib\aspose\Aspose.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Slides">
-      <HintPath>..\..\..\..\Products\_output\lib\aspose\Aspose.Slides.dll</HintPath>
+      <HintPath>..\..\..\..\lib\aspose\Aspose.Slides.dll</HintPath>
     </Reference>
     <Reference Include="Aspose.Words">
-      <HintPath>..\..\..\..\Products\_output\lib\aspose\Aspose.Words.dll</HintPath>
+      <HintPath>..\..\..\..\lib\aspose\Aspose.Words.dll</HintPath>
     </Reference>
     <Reference Include="Ataw.Framework.Core">
       <HintPath>..\..\..\..\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Core.dll</HintPath>
