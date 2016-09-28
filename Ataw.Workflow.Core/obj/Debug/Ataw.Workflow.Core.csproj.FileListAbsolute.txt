@@ -7,3 +7,6 @@ D:\AtawSources\Products\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.pd
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.csprojResolveAssemblyReference.cache
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.dll
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.pdb
+E:\git\modules\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.csprojResolveAssemblyReference.cache
+E:\git\modules\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.dll
+E:\git\modules\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.pdb

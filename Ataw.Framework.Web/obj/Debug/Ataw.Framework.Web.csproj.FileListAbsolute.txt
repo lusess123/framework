@@ -3,3 +3,8 @@ D:\AtawSources\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Web.pd
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.csprojResolveAssemblyReference.cache
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.dll
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.pdb
+E:\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Web.dll
+E:\Products\_output\library\Ataw.Framework.Web\Ataw.Framework.Web.pdb
+E:\git\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.csprojResolveAssemblyReference.cache
+E:\git\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.dll
+E:\git\modules\framework\Ataw.Framework.Web\obj\Debug\Ataw.Framework.Web.pdb

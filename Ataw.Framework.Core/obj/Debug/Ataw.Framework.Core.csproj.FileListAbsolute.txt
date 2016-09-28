@@ -16,3 +16,11 @@ D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Debug\Ataw.Fr
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.csproj.GenerateResource.Cache
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.dll
 D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.pdb
+E:\git\modules\framework\Ataw.Framework.Core\bin\Debug\Ataw.Framework.Core.dll
+E:\git\modules\framework\Ataw.Framework.Core\bin\Debug\Ataw.Framework.Core.pdb
+E:\git\modules\framework\Ataw.Framework.Core\bin\Debug\Newtonsoft.Json.dll
+E:\git\modules\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.csprojResolveAssemblyReference.cache
+E:\git\modules\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.Cache.Memcached.StringMessages.resources
+E:\git\modules\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.csproj.GenerateResource.Cache
+E:\git\modules\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.dll
+E:\git\modules\framework\Ataw.Framework.Core\obj\Debug\Ataw.Framework.Core.pdb
