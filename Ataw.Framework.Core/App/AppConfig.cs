@@ -10,6 +10,7 @@ namespace Ataw.Framework.Core
     public class AppConfig : FileXmlConfigBase, IReadXmlCallback
     {
         public AppConfig() {
+
             RoleInfoList = new List<RoleInfo>();
             Role2RightList = new List<Role2Right>();
             PanelList = new List<FormDoor>();
