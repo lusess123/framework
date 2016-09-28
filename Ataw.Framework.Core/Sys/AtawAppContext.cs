@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Shuttle.ESB.Core;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Ataw.Framework.Core.Model.Log;
@@ -478,11 +478,11 @@ namespace Ataw.Framework.Core
             }
             SysTxtBuilder.Current.NewLine();
         }
-        public IServiceBus AtawBus
-        {
-            get;
-            set;
-        }
+        //public IServiceBus AtawBus
+        //{
+        //    get;
+        //    set;
+        //}
 
         public DllInfo dllLog(string dll)
         {
@@ -543,7 +543,7 @@ namespace Ataw.Framework.Core
             if ("EBS".AppKv<bool>(false))
             {
                 //初始化 消息总线
-                AtawBus = ServiceBus.Create().Start();
+                //AtawBus = ServiceBus.Create().Start();
             }
             SignTime("消息总线初始化完毕....");
             //载入代码插件

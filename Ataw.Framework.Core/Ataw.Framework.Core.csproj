@@ -59,28 +59,21 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\_output\lib\EF\AtawEf\EntityFramework.dll</HintPath>
+      <HintPath>..\..\lib\EF\AtawEf\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\..\_output\lib\EF\AtawEf\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\_output\lib\memcached\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\..\lib\EF\AtawEf\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\_output\lib\ioc\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\..\lib\ioc\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Products\_output\Web\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Shuttle.ESB.Core">
-      <HintPath>..\..\..\lib\shuttleEBS\shuttle-esb-core.3.0.0-rc11\lib\net40-full\Shuttle.ESB.Core.dll</HintPath>
+      <HintPath>..\..\lib\json\Net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SocketIOClient">
-      <HintPath>..\..\..\_output\lib\WebSockect\SocketIOClient.dll</HintPath>
+      <HintPath>..\..\lib\WebSockect\SocketIOClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -95,7 +88,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WebSocket4Net, Version=0.7.0.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\_output\lib\WebSockect\WebSocket4Net.dll</HintPath>
+      <HintPath>..\..\lib\WebSockect\WebSocket4Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -182,16 +175,6 @@
     <Compile Include="Cache\DefaultCache.cs" />
     <Compile Include="Cache\Extensions.cs" />
     <Compile Include="Cache\IAtawCache.cs" />
-    <Compile Include="Cache\MemCachedCache.cs" />
-    <Compile Include="Cache\Memcached\CRCTool.cs" />
-    <Compile Include="Cache\Memcached\IterIsolate.cs" />
-    <Compile Include="Cache\Memcached\MemCachedClient.cs" />
-    <Compile Include="Cache\Memcached\MemCachedConfigSection.cs" />
-    <Compile Include="Cache\Memcached\NativeHandler.cs" />
-    <Compile Include="Cache\Memcached\NestedIOException.cs" />
-    <Compile Include="Cache\Memcached\NetworkStreamIgnoreSeek.cs" />
-    <Compile Include="Cache\Memcached\SockIO.cs" />
-    <Compile Include="Cache\Memcached\SockIOPool.cs" />
     <Compile Include="CMS\Config\Control\BaseControl.cs" />
     <Compile Include="CMS\Config\Control\ListItemControl.cs" />
     <Compile Include="CMS\Config\Enum\LayoutStyle.cs" />
@@ -790,11 +773,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\ViewCreator\FormViewCreator\AtawUpdateFormViewCreator.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Cache\Memcached\StringMessages.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
