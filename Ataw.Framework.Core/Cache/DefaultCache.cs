@@ -9,7 +9,7 @@ namespace Ataw.Framework.Core
 {
    public class DefaultAtawCache:IAtawCache
     {
-
+        //---
        public static  DefaultAtawCache Current
        {
            get;
