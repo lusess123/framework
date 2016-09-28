@@ -18,6 +18,7 @@ namespace Ataw.Framework.Core
             SysConfigForm = new FormDoor();
             ReportList = new List<FormDoor>();
             RootMenuRights = new List<MenuRight>();
+
             BaseInfo = new AppBaseInfo();
         }
 
