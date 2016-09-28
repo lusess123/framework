@@ -1,0 +1,5 @@
+D:\AtawSources\Ataw.Platform\out\Ataw.Framework.Web\Ataw.Framework.Web.dll
+D:\AtawSources\Ataw.Platform\out\Ataw.Framework.Web\Ataw.Framework.Web.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Web\obj\Release\Ataw.Framework.Web.csprojResolveAssemblyReference.cache
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Web\obj\Release\Ataw.Framework.Web.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Web\obj\Release\Ataw.Framework.Web.pdb

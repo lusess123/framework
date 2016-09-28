@@ -1,0 +1,114 @@
+﻿<div style="display: none">
+    <div id="dvPaintArea_temp">
+        <input type="hidden" id="hdnId" />
+        <div>
+            <span>名称:</span> <span>
+                <input type="text" name="name" />
+            </span>
+        </div>
+        <div>
+            <span>显示名:</span><span><input type="text" name="displayName" /></span></div>
+        <div>
+            <span>优先级:</span><span><select name="priority"><option value="0">高</option>
+                <option value="5">一般</option>
+                <option value="9">低</option>
+            </select></span></div>
+        <div>
+            <span>manualpagexml:</span><span><input type="text" name="manualPageXml" /></span></div>
+        <div>
+            <span>controlActions:</span><span><input type="text" name="controllActions" readonly="readonly" /></span></div>
+        <div>
+            <span>ContentChoice:</span><span><select name="contentChoice"><option value="0">--请选择--</option>
+                <option value="1">File</option>
+                <option value="2">Config</option>
+                <option value="3">Else</option>
+            </select></span></div>
+        <div>
+            <span>是否保存:</span><span><select name="isSave"><option value="1">是</option>
+                <option value="0">否</option>
+            </select></span></div>
+        <div>
+            <span>描述:</span><span><textarea name="description"></textarea></span></div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="begin_temp">
+        <div>
+            <span>名称:</span><span><input type="text" name="name" /></span></div>
+        <div>
+            <span>显示名:</span><span><input class="step_displayName" type="text" name="displayName" /></span></div>
+        <div>
+            <span>创建者插件:</span><span><input type="text" name="creatorRegName" /></span></div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="end_temp">
+        <div>
+            <span>名称:</span><span><input type="text" name="name" /></span></div>
+        <div>
+            <span>显示名:</span><span><input class="step_displayName" type="text" name="displayName" /></span></div>
+        <div>
+            <span>插件名:</span><span><input type="text" name="plugRegName" /></span></div>
+        <div>
+            <span>是否可以修改:</span><span><select name="isSave"><option value="1">是</option>
+                <option value="0">否</option>
+            </select></span></div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="manual_temp">
+        <div>
+            <span>名称:</span><span><input type="text" name="name" /></span></div>
+        <div>
+            <span>显示名:</span><span><input class="step_displayName" type="text" name="displayName" /></span></div>
+        <div>
+            <span>人员插件:</span><span><input type="text" name="actorRegName" /></span></div>
+        <div>
+            <span>manualpagexml:</span><span><input type="text" name="manualPageXml" /></span></div>
+        <div>
+            <span>controlActions:</span><span><input type="text" name="controllActions" readonly="readonly" /></span></div>
+        <div>
+            <span>ContentChoice:</span><span><select name="contentchoice"><option value="0">--请选择--</option>
+                <option value="1">File</option>
+                <option value="2">Config</option>
+                <option value="3">Else</option>
+            </select></span></div>
+        <div>
+            <span>操作:</span><span><input type="text" name="process" readonly="readonly" /></span></div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="auto_temp">
+        <div>
+            <span>名称:</span><span><input type="text" name="name" /></span></div>
+        <div>
+            <span>显示名:</span><span><input class="step_displayName" type="text" name="displayName" /></span></div>
+        <div>
+            <span>插件名:</span><span><input type="text" name="plugRegName" /></span></div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="route_temp">
+        <input type="hidden" name="hdnID" />
+        <div>
+            <span>名称:</span> <span>
+                <input type="text" name="name" />
+            </span>
+        </div>
+        <div>
+            <span>显示名:</span><span><input type="text" class="step_displayName" name="displayName" /></span></div>
+    </div>
+</div>
+<div style="display: none">
+    <div id="connection_temp">
+        <input type="hidden" name="hdnID" />
+        <div>
+            <span>名称:</span><span><input type="text" name="name" /></span></div>
+        <div>
+            <span>显示名:</span><span><input class="step_displayName" type="text" name="displayName" /></span></div>
+        <div>
+            <span>插件名:</span><span><input type="text" name="plugName" /></span></div>
+    </div>
+</div>
+@Html.Partial("ControlAction")
+@Html.Partial("Process")

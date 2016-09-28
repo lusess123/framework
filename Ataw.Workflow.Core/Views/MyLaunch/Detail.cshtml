@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "NewIndex";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+@using Ataw.Workflow.Web;
+@model DetailModel
+<script type="text/javascript" src="/Areas/WorkFlow/Scripts/WorkFlowInstDetail.js"> </script>
+@{Html.RenderPartial("../UserControl/DetailBody",Model);}

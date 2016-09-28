@@ -1,0 +1,121 @@
+﻿<script type="text/javascript">
+    var nonUiOperation = "<div><span>名称:<input type=\"text\" name=\"name\" /></span>"
+                + "<span>展示名:<input type=\"text\" name=\"displayName\"/></span>"
+                + "<span>按钮提示:<input type=\"text\" name=\"buttonCaption\" /></span>"
+                + "<span>插件:<input type=\"text\" name=\"plugIn\" /></span>"
+                + "<a href=\"javascript:void(0)\" mark=\"delNonUIOperationConfig\"><img src='/Content/themes/icons/no.png' alt='删除' title='删除' /></a></div>";
+    function initProcess(process) {
+        $("#addNonUIOperationConfig").prevAll().filter("div").remove();
+        $("#uiOperation input[name='name']").val("");
+        $("#uiOperation input[name='displayName']").val("");
+        $("#uiOperation input[name='buttonCaption']").val("");
+        $("#uiOperation input[name='PlugIn']").val("");
+        if (process != undefined && process != "") {
+            var pro = eval("(" + process + ")");
+            $("#uiOperation input[name='name']").val(pro.UIOperationConfig.Name);
+            $("#uiOperation input[name='displayName']").val(pro.UIOperationConfig.DisplayName);
+            $("#uiOperation input[name='buttonCaption']").val(pro.UIOperationConfig.ButtonCaption);
+            $("#uiOperation input[name='plugIn']").val(pro.UIOperationConfig.PlugIn);
+            var nui;
+            for (var i = 0; i < pro.NonUIOperationConfigs.length; i++) {
+                nui = "<div><span>名称:<input type=\"text\" name=\"name\" value=\"" + pro.NonUIOperationConfigs[i].Name + "\" /></span>"
+                + "<span>展示名:<input type=\"text\" name=\"displayName\" value=\"" + pro.NonUIOperationConfigs[i].DisplayName + "\"/></span>"
+                + "<span>按钮提示:<input type=\"text\" name=\"buttonCaption\" value=\"" + pro.NonUIOperationConfigs[i].ButtonCaption + "\"/></span>"
+                + "<span>插件:<input type=\"text\" name=\"plugIn\" value=\"" + pro.NonUIOperationConfigs[i].PlugIn + "\"/></span>"
+                + "<a href=\"javascript:void(0)\" mark=\"delNonUIOperationConfig\"><img src='/Content/themes/icons/no.png' alt='删除' title='删除' /></a></div>";
+                $("#addNonUIOperationConfig").before(nui);
+            }
+        }
+        else {
+            $("#addNonUIOperationConfig").before(nonUiOperation);
+        }
+    }
+    $(function () {
+        var that = this;
+        $("input[name='process']").live("click", function () {
+            that = this;
+            initProcess($(this).val());
+            $("#processWindow").window("open");
+        })
+        $("#addNonUIOperationConfig").click(function () {
+            $(this).before(nonUiOperation);
+        })
+        $("a[mark='delNonUIOperationConfig']").live("click", function () {
+            $(this).parent().remove();
+        })
+        $("#saveProcess").click(function () {
+            var processResult = {};
+            var uipc = new UIOperationConfig();
+            uipc.Name = $("#uiOperation input[name='name']").val();
+            if (uipc.Name == "") {
+                $("#uiOperation input[name='name']").focus();
+                return;
+            }
+            uipc.DisplayName = $("#uiOperation input[name='displayName']").val();
+            if (uipc.DisplayName == "") {
+                $("#uiOperation input[name='displayName']").focus();
+                return;
+            }
+            uipc.ButtonCaption = $("#uiOperation input[name='buttonCaption']").val();
+            if (uipc.ButtonCaption == "") {
+                $("#uiOperation input[name='buttonCaption']").focus();
+                return;
+            }
+            uipc.PlugIn = $("#uiOperation input[name='plugIn']").val();
+            if (uipc.PlugIn == "") {
+                $("#uiOperation input[name='plugIn']").focus();
+                return;
+            }
+            processResult.UIOperationConfig = uipc;
+            processResult.NonUIOperationConfigs = [];
+            var divs = $("#addNonUIOperationConfig").prevAll().filter("div");
+            var nuipc;
+            for (var i = 0; i < divs.length; i++) {
+                nuipc = new NonUIOperationConfig();
+                nuipc.Name = $(divs[i]).find("input[name='name']").val();
+                if (nuipc.Name == "") {
+                    $(divs[i]).find("input[name='name']").focus();
+                    return;
+                }
+                nuipc.DisplayName = $(divs[i]).find("input[name='displayName']").val();
+                if (nuipc.DisplayName == "") {
+                    $(divs[i]).find("input[name='displayName']").focus();
+                    return;
+                }
+                nuipc.ButtonCaption = $(divs[i]).find("input[name='buttonCaption']").val();
+                if (nuipc.ButtonCaption == "") {
+                    $(divs[i]).find("input[name='buttonCaption']").focus();
+                    return;
+                }
+                nuipc.PlugIn = $(divs[i]).find("input[name='plugIn']").val();
+                if (nuipc.PlugIn == "") {
+                    $(divs[i]).find("input[name='plugIn']").focus();
+                    return;
+                }
+                processResult.NonUIOperationConfigs.push(nuipc)
+            }
+            $(that).val($.toJSON(processResult));
+            $(that).trigger("change");
+            $("#processWindow").window("close");
+        })
+        $("#cancelProcess").click(function () {
+            $("#processWindow").window("close");
+        })
+    })
+</script>
+<div id="processWindow" class="easyui-window" closed="true" style="width: 900px;
+    height: 300px">
+    <div id="uiOperation">
+        <span>UIOperation</span> <span>名称:<input type="text" name="name" /></span> <span>展示名:<input
+            type="text" name="displayName" /></span> <span>按钮提示:<input type="text" name="buttonCaption" /></span>
+        <span>插件:<input type="text" name="plugIn" /></span>
+    </div>
+    <div id="nonUiOperation">
+        <span>NonUIOperation</span> <a href="javascript:void(0)" id="addNonUIOperationConfig">
+            增添</a>
+    </div>
+    <div>
+        <a href="javascript:void(0)" class="easyui-linkbutton" id="saveProcess">确定</a> <a
+            href="javascript:void(0)" class="easyui-linkbutton" id="cancelProcess">取消</a>
+    </div>
+</div>

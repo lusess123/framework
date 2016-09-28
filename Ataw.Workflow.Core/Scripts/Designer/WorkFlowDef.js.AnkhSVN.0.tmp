@@ -1,0 +1,60 @@
+﻿function reloadList() {
+    $("#list").datagrid("load", { shortName: trim($("#shortName").val()), name: trim($("#name").val()), begin: $("#BeginTime").val(), end: $("#EndTime").val() });
+}
+$(function () {
+    $("#search").click(function () {
+        reloadList();
+    });
+    $("#list").datagrid({
+        pageList: [10, 15, 20, 25, 30, 35],
+        height: "auto",
+        fitColumns: true,
+        collapsible: true,
+        sortName: "WD_SHORT_NAME",
+        sortOrder: "desc",
+        idField: "WD_SHORT_NAME",
+        url: "/WorkFlow/WorkFlowDef/InitData",
+        frozenColumns: [[
+            { field: "ck", checkbox: true }
+        ]],
+        columns: [[
+            { field: "WD_SHORT_NAME", title: "标识名", width: 100, sortable: true },
+            { field: "WD_NAME", title: "名称", width: 180, sortable: true },
+            { field: "WD_IS_USED", title: "状态", width: 60, sortable: true,
+                formatter: function (value) {
+                    if (value === 1) {
+                        return "启用中";
+                    } else if (value === 0) {
+                        return "禁用中"
+                    } else {
+                        return "";
+                    }
+                }
+            },
+            { field: "WD_VERSION", title: "版本号", width: 80 },
+            { field: "WD_CREATE_DATE", title: "创建时间", width: 180, sortable: true }
+        ]],
+        pagination: true,
+        onSortColumn: function () {
+            reloadList();
+        },
+        onClickRow: function (rowIndex) {
+            $('#list').datagrid("unselectRow", rowIndex);
+        }
+    });
+    $("#btnDetail").click(function () {
+        var rows = $("#list").datagrid("getSelected");
+        if (rows === null) {
+            return;
+        }
+        window.open("/WorkFlow/WorkFlowDef/Detail?shortName=" + rows.WD_SHORT_NAME, "_self");
+    })
+})
+function getSelections() {
+    var rows = $("#list").datagrid("getSelections");
+    var ids = [];
+    for (var i = 0; i < rows.length; i++) {
+        ids.push(rows[i].WD_SHORT_NAME);
+    }
+    return ids;
+}

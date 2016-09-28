@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F60CD00-578A-4325-A44F-3BAF8BC129B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ataw.Framework.Core</RootNamespace>
+    <AssemblyName>Ataw.Framework.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_output\lib\EF\AtawEf\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\_output\lib\EF\AtawEf\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_output\lib\memcached\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_output\lib\ioc\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Products\_output\Web\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Shuttle.ESB.Core">
+      <HintPath>..\..\..\lib\shuttleEBS\shuttle-esb-core.3.0.0-rc11\lib\net40-full\Shuttle.ESB.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOClient">
+      <HintPath>..\..\..\_output\lib\WebSockect\SocketIOClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebSocket4Net, Version=0.7.0.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_output\lib\WebSockect\WebSocket4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\AppConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\AppLink\AppLink.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\AppLink\AppLinkConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\AtawApplicationConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\DBConfig\DBConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\MvcXml\MvcConfigInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\MvcXml\RegRoutes.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\MvcXml\RoutesInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\ProductConfig\AtawConfigInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\ProductConfig\BaseConfigItemInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\ProductConfig\ControlUnitConfigItemInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\ProductConfig\ControlUnitItemInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\ProductConfig\ProductItemInfo.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\KeyValueItem.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\SiteFun\FunConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\Theme\ThemeListConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\Theme\ThemeListConfigItem.cs" />
+    <Compile Include="AtawConfig\AppMenu\AppMenu.cs" />
+    <Compile Include="AtawConfig\AppMenu\AppMenuConfig.cs" />
+    <Compile Include="AtawConfig\BusinessConfig\BusinessConfig.cs" />
+    <Compile Include="AtawConfig\BusinessConfig\Business.cs" />
+    <Compile Include="AtawConfig\Car\IGroupBuilder.cs" />
+    <Compile Include="AtawConfig\Car\GroupBuilderConfig.cs" />
+    <Compile Include="AtawConfig\CodeTable\DbCodeTable.cs" />
+    <Compile Include="AtawConfig\CodeTable\DbCodeTableXml.cs" />
+    <Compile Include="AtawConfig\CustomScript\CustomScriptSet.cs" />
+    <Compile Include="AtawConfig\DataDict\DataDict.cs" />
+    <Compile Include="AtawConfig\DataDict\DataDictXml.cs" />
+    <Compile Include="AtawConfig\desk\DeskForm.cs" />
+    <Compile Include="AtawConfig\desk\IDeskMergeBuilder.cs" />
+    <Compile Include="AtawConfig\desk\MeetingInfo.cs" />
+    <Compile Include="AtawConfig\desk\NoticeInfo.cs" />
+    <Compile Include="AtawConfig\desk\SingleMergeInfo.cs" />
+    <Compile Include="AtawConfig\desk\UserDeskConfig.cs" />
+    <Compile Include="AtawConfig\desk\UserOnlineInfo.cs" />
+    <Compile Include="AtawConfig\desk\UserConfig.cs" />
+    <Compile Include="AtawConfig\desk\ModuleInfo.cs" />
+    <Compile Include="AtawConfig\desk\DeskBoard.cs" />
+    <Compile Include="AtawConfig\DocViewerConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\FileManagementUtil.cs" />
+    <Compile Include="AtawConfig\FileManagement\FilePathInfo.cs" />
+    <Compile Include="AtawConfig\FileManagement\ImageCut.cs" />
+    <Compile Include="AtawConfig\FileManagement\ImageCutGroup.cs" />
+    <Compile Include="AtawConfig\FileManagement\ResourceArrange.cs" />
+    <Compile Include="AtawConfig\FileManagement\ResourceInfo.cs" />
+    <Compile Include="AtawConfig\GPS\GPSBuilderConfig.cs" />
+    <Compile Include="AtawConfig\GPS\GPSSetConfig.cs" />
+    <Compile Include="AtawConfig\GPS\IGPSBuilder.cs" />
+    <Compile Include="AtawConfig\GPS\IGPSSet.cs" />
+    <Compile Include="AtawConfig\GroupDbCodeTable\GroupDbCodeTable.cs" />
+    <Compile Include="AtawConfig\GroupDbCodeTable\GroupDbCodeTableXml.cs" />
+    <Compile Include="AtawConfig\Memcached\MemcachedConfig.cs" />
+    <Compile Include="AtawConfig\Messages\EnumMessageType.cs" />
+    <Compile Include="AtawConfig\Messages\IMessagesBuilder.cs" />
+    <Compile Include="AtawConfig\Messages\MessagesBuilderConfig.cs" />
+    <Compile Include="AtawConfig\Right\RightBuilderConfig.cs" />
+    <Compile Include="AtawConfig\Log\AtawPlugConfig.cs" />
+    <Compile Include="AtawConfig\Log\PlugDllInfo.cs" />
+    <Compile Include="AtawConfig\Log\PostModel.cs" />
+    <Compile Include="AtawConfig\Log\SqlLog.cs" />
+    <Compile Include="AtawConfig\Right\IAtawRightBuilder.cs" />
+    <Compile Include="AtawConfig\Right\FunRightItem.cs" />
+    <Compile Include="AtawConfig\CustomScript\CustomScript.cs" />
+    <Compile Include="AtawConfig\CustomScript\CustomScriptConfig.cs" />
+    <Compile Include="AtawConfig\Service\IAtawServiceBuilder.cs" />
+    <Compile Include="AtawConfig\Service\ServiceBuilderConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\SiteFun\SiteFunConfig.cs" />
+    <Compile Include="AtawConfig\UserApplication\UserApplicationConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AtawConfig\Workflow\IWorkflowDefBuilder.cs" />
+    <Compile Include="AtawConfig\Workflow\WorkflowDefBuilderConfig.cs" />
+    <Compile Include="AtawXml\BaseConfig.cs" />
+    <Compile Include="AtawConfig\ApplicationXml\DatabaseConfigItem.cs" />
+    <Compile Include="AtawXml\FileXmlConfigBase.cs" />
+    <Compile Include="AtawXml\IReadXmlCallback.cs" />
+    <Compile Include="AtawXml\IXmlSerial.cs" />
+    <Compile Include="Base\LinkList.cs" />
+    <Compile Include="Base\ListNode.cs" />
+    <Compile Include="Base\RegNameList.cs" />
+    <Compile Include="Cache\DefaultCache.cs" />
+    <Compile Include="Cache\Extensions.cs" />
+    <Compile Include="Cache\IAtawCache.cs" />
+    <Compile Include="Cache\MemCachedCache.cs" />
+    <Compile Include="Cache\Memcached\CRCTool.cs" />
+    <Compile Include="Cache\Memcached\IterIsolate.cs" />
+    <Compile Include="Cache\Memcached\MemCachedClient.cs" />
+    <Compile Include="Cache\Memcached\MemCachedConfigSection.cs" />
+    <Compile Include="Cache\Memcached\NativeHandler.cs" />
+    <Compile Include="Cache\Memcached\NestedIOException.cs" />
+    <Compile Include="Cache\Memcached\NetworkStreamIgnoreSeek.cs" />
+    <Compile Include="Cache\Memcached\SockIO.cs" />
+    <Compile Include="Cache\Memcached\SockIOPool.cs" />
+    <Compile Include="CMS\Config\Control\BaseControl.cs" />
+    <Compile Include="CMS\Config\Control\ListItemControl.cs" />
+    <Compile Include="CMS\Config\Enum\LayoutStyle.cs" />
+    <Compile Include="CMS\Config\Layout\Layout.cs" />
+    <Compile Include="CMS\Config\Layout\Cell.cs" />
+    <Compile Include="CMS\Config\Layout\Row.cs" />
+    <Compile Include="Config\BasePageViewTool.cs" />
+    <Compile Include="Config\Column\AmountConfig.cs" />
+    <Compile Include="Config\Column\AtawInnerPageConfig.cs" />
+    <Compile Include="Config\Column\ChangerConfig.cs" />
+    <Compile Include="Config\Column\ColumnConfig.cs" />
+    <Compile Include="Config\Column\EditorConfig.cs" />
+    <Compile Include="Config\Column\LegalObject.cs" />
+    <Compile Include="Config\Column\MarkDownConfig.cs" />
+    <Compile Include="Config\Column\NavigationConfig.cs" />
+    <Compile Include="Config\Column\PCASConfig.cs" />
+    <Compile Include="Config\Column\ReportConfig.cs" />
+    <Compile Include="Config\Column\ScoreConfig.cs" />
+    <Compile Include="Config\Column\UploadConfig.cs" />
+    <Compile Include="Config\Column\XmlDataType.cs" />
+    <Compile Include="Config\Column\TreeConfig.cs" />
+    <Compile Include="Config\Column\CustomControlConfig.cs" />
+    <Compile Include="Config\Column\ColumnGroupConfig.cs" />
+    <Compile Include="Config\CombineJs.cs" />
+    <Compile Include="Config\CommonButtonRight.cs" />
+    <Compile Include="Config\Column\ControlType.cs" />
+    <Compile Include="AtawConfig\FileManagement\FileManagementConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\FilePathScheme.cs" />
+    <Compile Include="AtawConfig\FileManagement\FileRootConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\FileUploadConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\FileStorageConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\FtpPathConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\HttpPathConfig.cs" />
+    <Compile Include="AtawConfig\FileManagement\MMSPathConfig.cs" />
+    <Compile Include="Config\EmptyPageViewTool.cs" />
+    <Compile Include="Config\Form\DataFormConfig.cs" />
+    <Compile Include="Config\Form\DeleteColumnConfig.cs" />
+    <Compile Include="Config\Form\CalendarView.cs" />
+    <Compile Include="Config\Form\MvcFormConfig.cs" />
+    <Compile Include="Config\Form\ScriptFormConfig.cs" />
+    <Compile Include="Config\Form\QingConfig.cs" />
+    <Compile Include="Config\Form\Tpl\TplConfig.cs" />
+    <Compile Include="Config\Form\SeaFormConfig.cs" />
+    <Compile Include="Config\Form\CalendarConfig.cs" />
+    <Compile Include="Config\Form\GroupConfig.cs" />
+    <Compile Include="Config\Form\ExpandDetailConfig.cs" />
+    <Compile Include="Config\Form\ExpandDetailType.cs" />
+    <Compile Include="Config\Global\BaseMacro.cs" />
+    <Compile Include="Config\Global\IMacro.cs" />
+    <Compile Include="Config\IPageViewTool.cs" />
+    <Compile Include="Config\ServerLegal\MorethanZeroLegal.cs" />
+    <Compile Include="Config\ServerLegal\MorethanZeroLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\NoneLegel.cs" />
+    <Compile Include="Config\ServerLegal\PCASRequiredCountLegal.cs" />
+    <Compile Include="Config\ServerLegal\UploadCountLegal.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawAmountOptionDetailCreator .cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawAmountOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawMomeryOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTwoColumnsDetailOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTwoColumnsOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawMaskCodeOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawNaviFilterOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawUserSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawPageSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawCustomOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawListBoxOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\MarkDownOptionCreator.cs" />
+    <Compile Include="Config\view\Column\ChangerViewConfig.cs" />
+    <Compile Include="Config\view\Column\AtawColumnGroupConfigView.cs" />
+    <Compile Include="Config\view\Form\AtawSeaFormConfigView.cs" />
+    <Compile Include="Config\view\Options\AtawAmountDetailOptions.cs" />
+    <Compile Include="Config\view\Options\AtawAmountOptions.cs" />
+    <Compile Include="Config\view\Options\AtawTwoColumnsDetailOptions.cs" />
+    <Compile Include="Config\view\Options\AtawTwoColumnsOptions.cs" />
+    <Compile Include="Config\view\Options\AtawMaskCodeOptions.cs" />
+    <Compile Include="Config\view\Options\AtawUserSelectorOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\view\Options\AtawPageSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\CustomOptions.cs" />
+    <Compile Include="Config\view\Options\ListBoxOptions.cs" />
+    <Compile Include="Config\view\Options\AtawNaviFilterOptions.cs" />
+    <Compile Include="Config\view\Options\MarkDownOptions.cs" />
+    <Compile Include="Config\view\Options\MomeryOptions.cs" />
+    <Compile Include="Config\view\Page\PageSelector.cs" />
+    <Compile Include="Config\ServerLegal\ContextLegal.cs" />
+    <Compile Include="Config\ServerLegal\ContextLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\CustomLegal.cs" />
+    <Compile Include="Config\ServerLegal\Email.cs" />
+    <Compile Include="Config\ServerLegal\EmailLegal.cs" />
+    <Compile Include="Config\ServerLegal\IDCardLegal.cs" />
+    <Compile Include="Config\ServerLegal\IDCardLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\IsNotNull.cs" />
+    <Compile Include="Config\Module\DataBaseConfig.cs" />
+    <Compile Include="Config\Panel.cs" />
+    <Compile Include="Config\PanelList.cs" />
+    <Compile Include="Config\Column\MacroConfig.cs" />
+    <Compile Include="Config\Right\IColumnRight.cs" />
+    <Compile Include="Config\Right\RightType.cs" />
+    <Compile Include="Config\Right\RightUnitConfig.cs" />
+    <Compile Include="Config\Right\PageStyleRightConfig.cs" />
+    <Compile Include="Config\Right\RightConfig.cs" />
+    <Compile Include="Config\Right\ButtonRightConfig.cs" />
+    <Compile Include="Config\Right\ColumnRightConfig.cs" />
+    <Compile Include="Config\Right\FormColumnRightConfig.cs" />
+    <Compile Include="Config\Right\FunctionRightConfig.cs" />
+    <Compile Include="Config\ServerLegal.cs" />
+    <Compile Include="Config\ServerLegal\EmailLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\Mobile.cs" />
+    <Compile Include="Config\ServerLegal\MobilePhoneLegal.cs" />
+    <Compile Include="Config\ServerLegal\MobilePhoneLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\NonnegativeInteger.cs" />
+    <Compile Include="Config\ServerLegal\NonnegativeIntegerNull.cs" />
+    <Compile Include="Config\ServerLegal\Password.cs" />
+    <Compile Include="Config\ServerLegal\PostCodeLegal.cs" />
+    <Compile Include="Config\ServerLegal\PostCodeLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\PriceLegal.cs" />
+    <Compile Include="Config\ServerLegal\PriceLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\RadioNotNull.cs" />
+    <Compile Include="Config\ServerLegal\SeatLegal.cs" />
+    <Compile Include="Config\ServerLegal\SeatLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\SelectionNotNull.cs" />
+    <Compile Include="Config\ServerLegal\Tel.cs" />
+    <Compile Include="Config\ServerLegal\TitleLegal.cs" />
+    <Compile Include="Config\ServerLegal\TitleLegalNull.cs" />
+    <Compile Include="Config\ServerLegal\UserName.cs" />
+    <Compile Include="Config\ServerLegal\UserNameLegal.cs" />
+    <Compile Include="Config\ServerLegal\VehicleLimitLegal.cs" />
+    <Compile Include="Config\ServerLegal\VehicleLimitLegalNull.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawAllImageShowOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawBaseNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawBasesSelectorNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawCheckBoxNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawFileUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawFormSingleSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawGPSMapInputOpenIframeOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawImageDetailOptionsCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawImageUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawInnerPageOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawLinkOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDownLinkOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDetailAreaOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDecodeOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDetailDateOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawBaseUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawMultiFileUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawMultiImageUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawRadioNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawSingleFileUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawSingleImageUploadOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawStarScoreOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTimeOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTreeMultiNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTreeNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTreeSingleNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawFormMultiSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawSingleRadioNaviOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDocumentSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawInnerFormOptionCreator.cs" />
+    <Compile Include="Config\view\Column\AtawNaviColumnConfigView.cs" />
+    <Compile Include="Config\view\Form\AtawScriptFormConfigView.cs" />
+    <Compile Include="Config\view\Options\AtawAllImageShowOptions.cs" />
+    <Compile Include="Config\view\Options\AtawBaseNaviOptions.cs" />
+    <Compile Include="Config\view\Options\AtawBasesSelectorNaviOptions.cs" />
+    <Compile Include="Config\view\Options\AtawCheckBoxNaviControlOptions.cs" />
+    <Compile Include="Config\view\Options\AtawGPSMapInputOpenIframeOptions.cs" />
+    <Compile Include="Config\view\Options\AtawImageDetailOptions.cs" />
+    <Compile Include="Config\view\Options\AtawInnerPageOptions.cs" />
+    <Compile Include="Config\view\Options\AtawRadioNaviControlOptions.cs" />
+    <Compile Include="Config\view\Options\AtawStarScoreOptions.cs" />
+    <Compile Include="Config\view\Options\AtawTreeMultiNaviOptions.cs" />
+    <Compile Include="Config\view\Options\AtawTreeNaviOptions.cs" />
+    <Compile Include="Config\view\Options\AtawTreeSingleNaviOptions.cs" />
+    <Compile Include="Config\view\Options\FileUploadOptions.cs" />
+    <Compile Include="Config\view\Options\FormSingleSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\ImageUploadOptions.cs" />
+    <Compile Include="Config\view\Options\LinkOptions.cs" />
+    <Compile Include="Config\view\Options\DownLinkOptions.cs" />
+    <Compile Include="Config\view\Options\DetailAreaOptions.cs" />
+    <Compile Include="Config\view\Options\DetailDateOptions.cs" />
+    <Compile Include="Config\view\Options\FormMultiSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\MultiFileUploadOptions.cs" />
+    <Compile Include="Config\view\Options\MultiImageUploadOptions.cs" />
+    <Compile Include="Config\view\Options\MultiOptions.cs" />
+    <Compile Include="Config\view\Options\SingleFileUploadOptions.cs" />
+    <Compile Include="Config\view\Options\SingleImageUploadOptions.cs" />
+    <Compile Include="Config\view\Options\TimeOptions.cs" />
+    <Compile Include="Config\view\Options\AtawSingleRadioNaviOptions.cs" />
+    <Compile Include="Config\view\Options\AtawDocumentSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\AtawInnerFormOptions.cs" />
+    <Compile Include="Config\view\Page\PageHeader.cs" />
+    <Compile Include="Config\ControlUnitIDExpression.cs" />
+    <Compile Include="Config\UserNameExpression.cs" />
+    <Compile Include="Config\CurrentUserIDExpression.cs" />
+    <Compile Include="DataAccess\BaseModel.cs" />
+    <Compile Include="DataAccess\DynamicLibrary.cs" />
+    <Compile Include="DataAccess\Repository\IRepository.cs" />
+    <Compile Include="DataAccess\Repository\Repository.cs" />
+    <Compile Include="DataAccess\Repository\RepositoryBase.cs" />
+    <Compile Include="DataAccess\SingleDbAccess.cs" />
+    <Compile Include="Data\ArrangeBuilder.cs" />
+    <Compile Include="Data\CommonMomery.cs" />
+    <Compile Include="Data\DBMomery.cs" />
+    <Compile Include="Data\EmptyDataTableSource.cs" />
+    <Compile Include="Data\HashCodeTable.cs" />
+    <Compile Include="Data\IMomery.cs" />
+    <Compile Include="Data\Legal\BaseLegal.cs" />
+    <Compile Include="Data\Legal\NotNullLegal.cs" />
+    <Compile Include="Data\TreeDataTableSource.cs" />
+    <Compile Include="Data\ObjectDataView.cs" />
+    <Compile Include="Data\UniqueRowArrange.cs" />
+    <Compile Include="Data\UniqueRow.cs" />
+    <Compile Include="Data\XmlCodeTable.cs" />
+    <Compile Include="EBS\AtawSysMessageCommand.cs" />
+    <Compile Include="Enum\LOG\LogType.cs" />
+    <Compile Include="Enum\RightFilterType.cs" />
+    <Compile Include="Enum\Service\EnumService.cs" />
+    <Compile Include="Enum\SIMGPS\EnumSimGPS.cs" />
+    <Compile Include="Enum\SingleCheckBoxIsOrNo.cs" />
+    <Compile Include="Enum\UI\Bootswitch.cs" />
+    <Compile Include="Enum\Vehicle\Enum_VehicleStatus.cs" />
+    <Compile Include="Exception\AtawLegalException.cs" />
+    <Compile Include="Fun\AppFunFetch.cs" />
+    <Compile Include="Fun\BaseFunFetch.cs" />
+    <Compile Include="Fun\IFunFetch.cs" />
+    <Compile Include="Instance\FolderTreeCodeTable.cs" />
+    <Compile Include="Instance\ObjectListSource.cs" />
+    <Compile Include="Instance\Plug\PlugAuthorCodeTable.cs" />
+    <Compile Include="Instance\Plug\PlugBaseClassCodeTable.cs" />
+    <Compile Include="Interface\DefaultEmailServices.cs" />
+    <Compile Include="Interface\IEmailServices.cs" />
+    <Compile Include="Interface\IMethod.cs" />
+    <Compile Include="Macro\AtawExpressionParameter.cs" />
+    <Compile Include="Macro\AtawExpressionParser.cs" />
+    <Compile Include="Macro\IParamExpression.cs" />
+    <Compile Include="Macro\MacroExpression.cs" />
+    <Compile Include="Config\Form\FormType.cs" />
+    <Compile Include="Config\IButtonRight.cs" />
+    <Compile Include="Macro\IExpression.cs" />
+    <Compile Include="Config\Form\FormConfig.cs" />
+    <Compile Include="Config\Module\ModuleConfig.cs" />
+    <Compile Include="Config\Module\ModuleMode.cs" />
+    <Compile Include="Config\Module\RelationConfig.cs" />
+    <Compile Include="Config\Form\OverrideColumnConfig.cs" />
+    <Compile Include="Config\Form\PagerConfig.cs" />
+    <Compile Include="Config\PageStyle.cs" />
+    <Compile Include="Config\Module\ScriptConfig.cs" />
+    <Compile Include="Config\Column\SearchConfig.cs" />
+    <Compile Include="Config\Column\SelectorConfig.cs" />
+    <Compile Include="Config\Column\UploadFileConfig.cs" />
+    <Compile Include="Config\Column\UploadImageConfig.cs" />
+    <Compile Include="Config\ViewCreator\FormViewCreator\AtawBaseFormViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\FormViewCreator\AtawListFormViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\FormViewCreator\AtawDetailFormViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\FormViewCreator\AtawInsertFormViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawSingleCheckBoxOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTextOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTextAreaOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDetailOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawPasswordOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDateOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawDateTimeOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawHiddenOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawEditorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawComboOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawRadioOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTreeMultiSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawTreeSingleSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawBaseMultiOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawMultiSelectorOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawPCASOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\PageViewCreator\AtawBasePageViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\PageViewCreator\AtawListPageViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\PageViewCreator\AtawDetailPageViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\PageViewCreator\AtawInsertPageViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\PageViewCreator\AtawModulePageViewCreator.cs" />
+    <Compile Include="Config\ViewCreator\PageViewCreator\AtawUpdatePageViewCreator.cs" />
+    <Compile Include="Config\view\Column\AtawColumnConfigView.cs" />
+    <Compile Include="Config\view\Page\AtawPageConfigView.cs" />
+    <Compile Include="Config\view\Form\AtawFormConfigView.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawOptionCreator.cs" />
+    <Compile Include="Config\view\AtawPageViewModel.cs" />
+    <Compile Include="Config\view\CustomButton\ClientConfigView.cs" />
+    <Compile Include="Config\view\CustomButton\CustomButtonConfigView.cs" />
+    <Compile Include="Config\view\CustomButton\ServerConfigView.cs" />
+    <Compile Include="Config\view\Column\ControlLegal.cs" />
+    <Compile Include="Config\view\Column\JsDataValue.cs" />
+    <Compile Include="Config\view\Column\JsDataValueType.cs" />
+    <Compile Include="Config\view\Options\BaseOptions.cs" />
+    <Compile Include="Config\view\Options\BaseTextOptions.cs" />
+    <Compile Include="Config\view\Options\BaseUploadOptions.cs" />
+    <Compile Include="Config\view\Options\CheckBoxOptions.cs" />
+    <Compile Include="Config\view\Options\ComboOptions.cs" />
+    <Compile Include="Config\view\Options\ComboTreeSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\DateOptions.cs" />
+    <Compile Include="Config\view\Options\DateTimeOptions.cs" />
+    <Compile Include="Config\view\Options\DetailOptions.cs" />
+    <Compile Include="Config\view\Options\EditorOptions.cs" />
+    <Compile Include="Config\view\Options\HiddenOptions.cs" />
+    <Compile Include="Config\view\Options\BaseMultiOptions.cs" />
+    <Compile Include="Config\view\Options\PasswordOptions.cs" />
+    <Compile Include="Config\view\Options\RadioOptions.cs" />
+    <Compile Include="Config\view\Options\SelectorOptions.cs" />
+    <Compile Include="Config\view\Options\SingleCheckBoxOptions.cs" />
+    <Compile Include="Config\view\Options\TextAreaOptions.cs" />
+    <Compile Include="Config\view\Options\TextOptions.cs" />
+    <Compile Include="Config\view\Options\TreeMultiSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\TreeSingleSelectorOptions.cs" />
+    <Compile Include="Config\view\Page\AtawListPageConfigView.cs" />
+    <Compile Include="Config\ListPageViewConfig.cs" />
+    <Compile Include="Config\view\Options\MultiSelectorOptions.cs" />
+    <Compile Include="Config\view\Options\PCASOptions.cs" />
+    <Compile Include="Config\view\Column\PostSetting.cs" />
+    <Compile Include="Config\view\Page\AtawDetailPageConfigView.cs" />
+    <Compile Include="Config\view\Page\AtawInsertPageConfigView.cs" />
+    <Compile Include="Config\view\Page\AtawUpdatePageConfigView.cs" />
+    <Compile Include="Config\NowExpression.cs" />
+    <Compile Include="Config\Column\ControlLegalConfig.cs" />
+    <Compile Include="Config\Column\LegalKind.cs" />
+    <Compile Include="Config\view\Form\AtawBaseFormConfigView.cs" />
+    <Compile Include="Config\view\Form\AtawMvcFormConfigView.cs" />
+    <Compile Include="Config\Column\ColumnKind.cs" />
+    <Compile Include="Config\Module\CustomButtonConfig.cs" />
+    <Compile Include="Config\Module\ClientConfig.cs" />
+    <Compile Include="Config\Module\ServerConfig.cs" />
+    <Compile Include="DataAccess\AtawDbContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\AtawDBList.cs" />
+    <Compile Include="DataAccess\IUnitOfData.cs" />
+    <Compile Include="DataAccess\IQueryResolver.cs" />
+    <Compile Include="DataAccess\ModelQueryResolver.cs" />
+    <Compile Include="DataAccess\SQLHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccess\SqlTrans.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\CodeTable.cs" />
+    <Compile Include="Data\BaseDataTableSource.cs" />
+    <Compile Include="Data\DataTypeUtil.cs" />
+    <Compile Include="Data\IDataSet.cs" />
+    <Compile Include="Data\ListDataTable.cs" />
+    <Compile Include="Data\QueryObj.cs" />
+    <Compile Include="Data\SingleCodeTable.cs" />
+    <Compile Include="Data\EnumCodeTable.cs" />
+    <Compile Include="Data\IListDataTable.cs" />
+    <Compile Include="Data\ObjectData.cs" />
+    <Compile Include="Instance\Plug\PlugInfoSource.cs" />
+    <Compile Include="Data\PlugModel.cs" />
+    <Compile Include="Data\SysDataType.cs" />
+    <Compile Include="Data\TreeCodeTable.cs" />
+    <Compile Include="Enum\ConfigChoice.cs" />
+    <Compile Include="Enum\SIMGPS\EnumSMSSendStatus.cs" />
+    <Compile Include="Enum\JsActionType.cs" />
+    <Compile Include="Enum\PlugInTag.cs" />
+    <Compile Include="Enum\RightKeyType.cs" />
+    <Compile Include="Enum\UI\ShowKind.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawBaseOptionCreator.cs" />
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawSelectorOptionCreator.cs" />
+    <Compile Include="Instance\AreaDataDbContext.cs" />
+    <Compile Include="Instance\AreaDataTreeCodeTable.cs" />
+    <Compile Include="Instance\DbTreeCodeTable.cs" />
+    <Compile Include="Instance\SimpleDataTreeCodeTable.cs" />
+    <Compile Include="Instance\TreeCodeTable.cs" />
+    <Compile Include="Instance\TreeCodeTableMap.cs" />
+    <Compile Include="Instance\tt\TTEntity.cs" />
+    <Compile Include="Instance\tt\TTDbContext.cs" />
+    <Compile Include="Instance\tt\TreeCodeTableMap.cs" />
+    <Compile Include="Instance\WorkfowTestButtonRight.cs" />
+    <Compile Include="Interface\MyBaseClass.cs" />
+    <Compile Include="Ioc\IIoc.cs" />
+    <Compile Include="Exception\AtawArgumentException.cs" />
+    <Compile Include="Exception\AtawArgumentNullException.cs" />
+    <Compile Include="Exception\AtawAssertException.cs" />
+    <Compile Include="Exception\AtawDebug.cs" />
+    <Compile Include="Exception\AtawException.cs" />
+    <Compile Include="Ioc\AtawIocContext.cs" />
+    <Compile Include="Linq\ConditionBuilder.cs" />
+    <Compile Include="Linq\ExpressionVisitor.cs" />
+    <Compile Include="Linq\PartialEvaluator.cs" />
+    <Compile Include="Logger\logger.cs" />
+    <Compile Include="Logger\FileLogger.cs" />
+    <Compile Include="Logger\ILog.cs" />
+    <Compile Include="Logger\LogManager.cs" />
+    <Compile Include="Message\IMessage.cs" />
+    <Compile Include="Message\MessageModel.cs" />
+    <Compile Include="Message\MessageService.cs" />
+    <Compile Include="Message\MessageType.cs" />
+    <Compile Include="Message\ToDoItem.cs" />
+    <Compile Include="Message\IMessageFilter.cs" />
+    <Compile Include="Message\DefaultMessageFilter.cs" />
+    <Compile Include="Model\CodeDataModel.cs" />
+    <Compile Include="Model\JsResponseResult.cs" />
+    <Compile Include="Model\Log\ClassInfo.cs" />
+    <Compile Include="Model\Log\DllInfo.cs" />
+    <Compile Include="Model\Log\LogInfo.cs" />
+    <Compile Include="Model\Log\TimePoint.cs" />
+    <Compile Include="Model\MenuTreeModel.cs" />
+    <Compile Include="Model\NumModel.cs" />
+    <Compile Include="Model\Pagination.cs" />
+    <Compile Include="Model\ResponseResult.cs" />
+    <Compile Include="Model\TreeCodeTableModel.cs" />
+    <Compile Include="NodeMessage\Enum\AccessRightType.cs" />
+    <Compile Include="NodeMessage\Enum\ActivityCommentType.cs" />
+    <Compile Include="NodeMessage\Enum\ActivityItemAction.cs" />
+    <Compile Include="NodeMessage\Enum\ActivityItemType.cs" />
+    <Compile Include="NodeMessage\Enum\ApplyStatusType.cs" />
+    <Compile Include="NodeMessage\Enum\ApprovedType.cs" />
+    <Compile Include="NodeMessage\Enum\ArticleType.cs" />
+    <Compile Include="NodeMessage\Enum\ClubApplyType.cs" />
+    <Compile Include="NodeMessage\Enum\ClubRoleType.cs" />
+    <Compile Include="NodeMessage\Enum\ClubType.cs" />
+    <Compile Include="NodeMessage\Enum\DataManagementType.cs" />
+    <Compile Include="NodeMessage\Enum\DocumentType.cs" />
+    <Compile Include="NodeMessage\Enum\PrivacyType.cs" />
+    <Compile Include="NodeMessage\Enum\DMViewType.cs" />
+    <Compile Include="NodeMessage\Enum\ClubMemberType.cs" />
+    <Compile Include="NodeMessage\Enum\PageHelpType.cs" />
+    <Compile Include="NodeMessage\ISnsActive.cs" />
+    <Compile Include="NodeMessage\NodeRequest.cs" />
+    <Compile Include="NodeMessage\NodeServerPusher.cs" />
+    <Compile Include="NodeMessage\RouteDefine.cs" />
+    <Compile Include="NodeMessage\SnsActiveService.cs" />
+    <Compile Include="ORM\AccessProvider.cs" />
+    <Compile Include="ORM\ActionsHandler.cs" />
+    <Compile Include="ORM\AutoMapper.cs" />
+    <Compile Include="ORM\BaseDeleteBuilder.cs" />
+    <Compile Include="ORM\BaseInsertBuilder.cs" />
+    <Compile Include="ORM\BaseStoredProcedureBuilder.cs" />
+    <Compile Include="ORM\BaseUpdateBuilder.cs" />
+    <Compile Include="ORM\BuilderData.cs" />
+    <Compile Include="ORM\ConnectionFactory.cs" />
+    <Compile Include="ORM\DataReader.cs" />
+    <Compile Include="ORM\DataReaderField.cs" />
+    <Compile Include="ORM\DataReaderHelper.cs" />
+    <Compile Include="ORM\DataTypes.cs" />
+    <Compile Include="ORM\DB2Provider.cs" />
+    <Compile Include="ORM\DbCommand-1.cs" />
+    <Compile Include="ORM\DbCommand-10.cs" />
+    <Compile Include="ORM\DbCommand-11.cs" />
+    <Compile Include="ORM\DbCommand-12.cs" />
+    <Compile Include="ORM\DbCommand-13.cs" />
+    <Compile Include="ORM\DbCommand-2.cs" />
+    <Compile Include="ORM\DbCommand-3.cs" />
+    <Compile Include="ORM\DbCommand-4.cs" />
+    <Compile Include="ORM\DbCommand-5.cs" />
+    <Compile Include="ORM\DbCommand-6.cs" />
+    <Compile Include="ORM\DbCommand-7.cs" />
+    <Compile Include="ORM\DbCommand-8.cs" />
+    <Compile Include="ORM\DbCommand-9.cs" />
+    <Compile Include="ORM\DbCommandData.cs" />
+    <Compile Include="ORM\DbCommandTypes.cs" />
+    <Compile Include="ORM\DbContext-1.cs" />
+    <Compile Include="ORM\DbContext-2.cs" />
+    <Compile Include="ORM\DbContext-3.cs" />
+    <Compile Include="ORM\DbContext-4.cs" />
+    <Compile Include="ORM\DbContext-5.cs" />
+    <Compile Include="ORM\DbContext-6.cs" />
+    <Compile Include="ORM\DbContext-7.cs" />
+    <Compile Include="ORM\DbContext-8.cs" />
+    <Compile Include="ORM\DbContext-9.cs" />
+    <Compile Include="ORM\DbContextData.cs" />
+    <Compile Include="ORM\DbProviderFactory.cs" />
+    <Compile Include="ORM\DbProviderTypes.cs" />
+    <Compile Include="ORM\DbTypeMapper.cs" />
+    <Compile Include="ORM\DeleteBuilder.cs" />
+    <Compile Include="ORM\DeleteBuilderSqlGenerator.cs" />
+    <Compile Include="ORM\DynamicQueryHandler.cs" />
+    <Compile Include="ORM\DynamicTypAutoMapper.cs" />
+    <Compile Include="ORM\EntityFactory.cs" />
+    <Compile Include="ORM\ExecuteHandler.cs" />
+    <Compile Include="ORM\ExecuteQueryHandler.cs" />
+    <Compile Include="ORM\FluentDataException.cs" />
+    <Compile Include="ORM\GenericQueryHandler.cs" />
+    <Compile Include="ORM\IBaseStoredProcedureBuilder.cs" />
+    <Compile Include="ORM\IDataReader.cs" />
+    <Compile Include="ORM\IDbCommand.cs" />
+    <Compile Include="ORM\IDbContext.cs" />
+    <Compile Include="ORM\IDbProvider.cs" />
+    <Compile Include="ORM\IDeleteBuilder.cs" />
+    <Compile Include="ORM\IEntityFactory.cs" />
+    <Compile Include="ORM\IInsertBuilder.cs" />
+    <Compile Include="ORM\IInsertBuilderDynamic.cs" />
+    <Compile Include="ORM\IInsertUpdateBuilder.cs" />
+    <Compile Include="ORM\IInsertUpdateBuilderDynamic.cs" />
+    <Compile Include="ORM\InsertBuilder.cs" />
+    <Compile Include="ORM\InsertBuilderDynamic.cs" />
+    <Compile Include="ORM\InsertBuilderSqlGenerator.cs" />
+    <Compile Include="ORM\ISelectBuilder.cs" />
+    <Compile Include="ORM\IsolationLevel.cs" />
+    <Compile Include="ORM\IStoredProcedureBuilder.cs" />
+    <Compile Include="ORM\IStoredProcedureBuilderDynamic.cs" />
+    <Compile Include="ORM\IUpdateBuilder.cs" />
+    <Compile Include="ORM\IUpdateBuilderDynamic.cs" />
+    <Compile Include="ORM\MySqlProvider.cs" />
+    <Compile Include="ORM\OnConnectionClosedEventArgs.cs" />
+    <Compile Include="ORM\OnConnectionOpenedEventArgs.cs" />
+    <Compile Include="ORM\OnConnectionOpeningEventArgs.cs" />
+    <Compile Include="ORM\OnErrorEventArgs.cs" />
+    <Compile Include="ORM\OnExecutedEventArgs.cs" />
+    <Compile Include="ORM\OnExecutingEventArgs.cs" />
+    <Compile Include="ORM\OracleProvider.cs" />
+    <Compile Include="ORM\Parameter.cs" />
+    <Compile Include="ORM\ParameterCollection.cs" />
+    <Compile Include="ORM\ParameterDirection.cs" />
+    <Compile Include="ORM\ParameterHandler.cs" />
+    <Compile Include="ORM\PostgreSqlProvider.cs" />
+    <Compile Include="ORM\PropertyExpressionParser.cs" />
+    <Compile Include="ORM\QueryComplexHandler.cs" />
+    <Compile Include="ORM\QueryNoAutoMapHandler.cs" />
+    <Compile Include="ORM\QuerySingleNoAutoMapHandler.cs" />
+    <Compile Include="ORM\QueryValueHandler.cs" />
+    <Compile Include="ORM\QueryValuesHandler.cs" />
+    <Compile Include="ORM\ReflectionHelper.cs" />
+    <Compile Include="ORM\SelectBuilder.cs" />
+    <Compile Include="ORM\Sqlite.cs" />
+    <Compile Include="ORM\SqlServerCompactProvider.cs" />
+    <Compile Include="ORM\SqlServerProvider.cs" />
+    <Compile Include="ORM\StoredProcedureBuilder.cs" />
+    <Compile Include="ORM\StoredProcedureBuilderDynamic.cs" />
+    <Compile Include="ORM\TableColumn.cs" />
+    <Compile Include="ORM\TransactionStates.cs" />
+    <Compile Include="ORM\UpdateBuilder.cs" />
+    <Compile Include="ORM\UpdateBuilderDynamic.cs" />
+    <Compile Include="ORM\UpdateBuilderSqlGenerator.cs" />
+    <Compile Include="PlugIn\Assambly\AppDomainTypeFinder.cs" />
+    <Compile Include="PlugIn\Assambly\AssamblyTable.cs" />
+    <Compile Include="PlugIn\Assambly\EnumCodePlugAttribute.cs" />
+    <Compile Include="PlugIn\Assambly\InitPriority.cs" />
+    <Compile Include="PlugIn\Assambly\ITypeFinder.cs" />
+    <Compile Include="PlugIn\BasePlugInAttribute.cs" />
+    <Compile Include="PlugIn\BaseRegItem.cs" />
+    <Compile Include="PlugIn\Assambly\InitializationAttribute.cs" />
+    <Compile Include="PlugIn\CodePlugAttribute.cs" />
+    <Compile Include="PlugIn\CodeRegItem.cs" />
+    <Compile Include="PlugIn\DataSetSource.cs" />
+    <Compile Include="PlugIn\IAuthor.cs" />
+    <Compile Include="PlugIn\IRegName.cs" />
+    <Compile Include="PlugIn\model\PlugInModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\AtawConst.cs" />
+    <Compile Include="Core\StrResource.cs" />
+    <Compile Include="Report\IReportSource.cs" />
+    <Compile Include="rss\RssDataSource.cs" />
+    <Compile Include="sns\ISnsUserCardService.cs" />
+    <Compile Include="sns\ISnsClubCardService.cs" />
+    <Compile Include="sns\ISnsNodeService.cs" />
+    <Compile Include="Sys\AtawTrace.cs" />
+    <Compile Include="Sys\DbContextManager.cs" />
+    <Compile Include="Sys\IFlyweight.cs" />
+    <Compile Include="Sys\IAppRegistration.cs" />
+    <Compile Include="Sys\AtawAppContext.cs" />
+    <Compile Include="Sys\SysTxtBuilder.cs" />
+    <Compile Include="Sys\TraceFileListener.cs" />
+    <Compile Include="Thread\WriteLockDisposable.cs" />
+    <Compile Include="Tree\ITree.cs" />
+    <Compile Include="Tree\TreeModel.cs" />
+    <Compile Include="Util\BlockUtil.cs" />
+    <Compile Include="Util\DataRowToEntity.cs" />
+    <Compile Include="Util\DataSetUtil.cs" />
+    <Compile Include="Util\DBUtil.cs" />
+    <Compile Include="Util\ExpandoExtensions.cs" />
+    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\ImageUtil.cs" />
+    <Compile Include="Util\ListToDataTable.cs" />
+    <Compile Include="Util\keyUtil.cs" />
+    <Compile Include="Util\LinqUtil.cs" />
+    <Compile Include="Util\MapCutter\Callback.cs" />
+    <Compile Include="Util\MapCutter\Cutter.cs" />
+    <Compile Include="Util\MapCutter\Helper.cs" />
+    <Compile Include="Util\ObjectExtension.cs" />
+    <Compile Include="Util\ObjectUtil.cs" />
+    <Compile Include="Util\PinYinSql.cs" />
+    <Compile Include="Util\ProductConfig\ConfigString\ConfigString.cs" />
+    <Compile Include="Util\ProductConfig\DBConnstring\DBEnum.cs" />
+    <Compile Include="Util\ProductConfig\DBConnstring\DBString.cs" />
+    <Compile Include="Util\QuoteIdList.cs" />
+    <Compile Include="Util\RMBUtil.cs" />
+    <Compile Include="Util\SqlUtil.cs" />
+    <Compile Include="Util\StringUtil.cs" />
+    <Compile Include="Util\TimeUtil.cs" />
+    <Compile Include="Util\Xml2DataBase.cs" />
+    <Compile Include="Util\XmlUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\RightUtil.cs" />
+    <Compile Include="Util\EmailUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CMS\View\" />
+    <Folder Include="PlugIn\MulitBin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ViewCreator\OptionCreator\AtawCheckBoxOptionCreator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ViewCreator\FormViewCreator\AtawUpdateFormViewCreator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cache\Memcached\StringMessages.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

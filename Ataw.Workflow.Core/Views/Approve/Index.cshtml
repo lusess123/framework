@@ -1,0 +1,21 @@
+﻿
+<input id="WorkFlow-Approve-Index" type="hidden" value="审核操作" />
+<div class="popupCon">
+    <ul class="popSort">
+        <li ds="WF_APPROVE_HISTORY.AH_APPROVE.0" ack="Radio" class="AC-K ">
+            <label class="popLab">
+                操作：</label>
+            <input id="APPROVE_YES" class="validate[required] radio" name="Approve" value="1"
+                type="radio" />同意
+            <input name="Approve" class="validate[required] radio" value="0" type="radio" />不同意
+        </li>
+    </ul>
+    <ul class="popSort" style="height: 75px;">
+        <li>
+            <label class="popLab">
+                流转意见：</label>
+            <textarea ds="WF_APPROVE_HISTORY.AH_NOTE.0" ack="TextArea" class="validate[required] textArea AC-K"
+                id="WF_APPROVE_HISTORY_Note"></textarea>
+        </li>
+    </ul>
+</div>

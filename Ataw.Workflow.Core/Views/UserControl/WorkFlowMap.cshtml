@@ -1,0 +1,116 @@
+﻿@using Ataw.Workflow.Web;
+@model MapModel
+<script type="text/javascript">
+    $(function () {
+        var x = -230;
+        var y = -245;
+        var $FlowMenuBtn = $(".flowImgcon ul li a");
+        var $menuBox = $("#folw_popMenu");
+        $FlowMenuBtn.click(function (e) {
+            $FlowMenuBtn.each(function () {
+                $(this).removeClass("partHover");
+            })
+            $(this).addClass("partHover");
+            e.stopPropagation(); //停止事件冒泡
+            var classes = $(this).attr("class");
+            var index = classes.indexOf("curHover "); //当前节点
+            if (index > -1) {//如果是当前节点则弹出快捷菜单，否则不弹出
+                $menuBox.css({ "top": (e.pageY + y) + "px", "left": (e.pageX + x) + "px" }).show();
+            }
+        })
+
+        $(document).click(function (event) {
+            $menuBox.hide();
+            $FlowMenuBtn.each(function () {
+                $(this).removeClass("partHover");
+            })
+        })
+    })
+</script>
+<div class="flowImg">
+    <div class="flowImgcon">
+        <div class="stat">
+            <ul>
+                <li><a class="flow_part">@Model.LastStep.DisplayName</a></li>
+            </ul>
+            <div class="imgLine">
+            </div>
+        </div>
+        <div class="flowImgcon_list">
+            <div class="rowLine" id="rowline">
+            </div>
+            <ul id="step">
+                @foreach (var step in Model.OtherSteps)
+                { 
+                    <li><span></span><b></b><a class="flow_part">@step.DisplayName</a> </li>
+
+                }
+                <li><span></span><b></b><a class="flow_part curHover">@Model.CurrentStep.DisplayName</a>
+                    @if (Model.NextStep != null)
+                    {
+                        <dfn></dfn><b></b>
+                    }
+                </li>
+            </ul>
+        </div>
+        @if (Model.NextStep != null)
+        {
+            <div class="end">
+                <ul>
+                    <li><a class="flow_part">@Model.NextStep.DisplayName</a></li>
+                </ul>
+            </div>
+        }
+    </div>
+    <script type="text/javascript">
+
+        var setMap = false;
+        function SetMap() {
+            //var wH = $(".flowImgcon_list li a").width() + 82; //内容节点宽度
+            if (!setMap) {
+                setMap = true;
+                //var sum = 0;
+                var wH2 = $(".flowImgcon_list li a");
+                //debugger;
+                //                wH2.each(function (i) {
+                //                    //alert($(this).width());
+                //                    sum = sum + ($(this).width() + 82); //parseInt
+                //                })
+                var listW = $(".flowImgcon_list"); // 内容节点列表宽度
+                var $length = $(".flowImgcon_list li a").length;  //内容节点数目
+                var rlW = $(".rowLine");
+                //alert($length);
+                var sumWs = 200 * $length;
+                //alert(sumWs);
+                listW.css({ "width": +sumWs + "px" });  //内容节点列表宽度
+                //alert(sum);
+                if ($length > 2) {
+                    var wH3 = $(".flowImgcon_list li:first").width();
+                    var wH4 = $(".flowImgcon_list li:last").width();
+                    var sumW = (wH4 + wH3) / 2;
+                    rlW.css("width", +(sumWs - sumW) + "px"); //内容节点上部连接横线宽度和位置
+                } else if ($length == 2) {
+                    var wH3s = $(".flowImgcon_list li:first").width();
+                    rlW.css("width", +((sumWs / 2) + 2) + "px");
+                }
+                else {
+                    var wH2s = $(".flowImgcon_list li a").width() + 82;
+                    rlW.css("width", "2px");
+                }
+                //var $dfny = $("dfn").offset().left;  //尾部节点竖线left值获取
+                if ($("dfn").length > 0) {
+                    var $dfny = $("dfn").position().left;
+                    //alert($dfny);
+                    var $sel = $(".curHover").width();
+                    var $end = $(".end");
+                    $end.css("left", $dfny - ($sel / 2) - 40);  //结束节点位置
+                }
+                //alert($("#step").width());
+            }
+        }
+    </script>
+</div>
+@*</div>*@
+<script>
+    SetMap();
+</script>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1A390F0-0374-4C54-9D66-CB196189FE8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ataw.Workflow.Core</RootNamespace>
+    <AssemblyName>Ataw.Workflow.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Products\_output\library\Ataw.Workflow.Core\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\EF\AtawEf\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\lib\EF\AtawEf\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\BFWorkflow.cs" />
+    <Compile Include="Business\IWorkflowBusiness.cs" />
+    <Compile Include="Config\AutoStepConfig.cs" />
+    <Compile Include="Config\BeginStepConfig.cs" />
+    <Compile Include="Config\ConnectionConfig.cs" />
+    <Compile Include="Config\ControlActionConfig.cs" />
+    <Compile Include="Config\EndStepConfig.cs" />
+    <Compile Include="Config\ErrorConfig.cs" />
+    <Compile Include="Config\ManualStepConfig.cs" />
+    <Compile Include="Config\MergeStepConfig.cs" />
+    <Compile Include="Config\NonUIOperationConfig.cs" />
+    <Compile Include="Config\OperationConfig.cs" />
+    <Compile Include="Config\ProcessConfig.cs" />
+    <Compile Include="Config\RouteStepConfig.cs" />
+    <Compile Include="Config\StepConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\StepConfigCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\StepConnectionConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\UIOperationConfig.cs" />
+    <Compile Include="DataAccess\DA\DAWorkflow.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_APPROVE_HISTORYMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_DataTableMap.cs" />
+    <Compile Include="DataAccess\Models\WF_APPROVE_HISTORY.cs" />
+    <Compile Include="DataAccess\Models\WF_DataTable.cs" />
+    <Compile Include="DataAccess\Models\WorkflowContext.cs" />
+    <Compile Include="DataAccess\TableResolver\BaseTableResolver.cs" />
+    <Compile Include="DataAccess\View\WorkflowInstHisView.cs" />
+    <Compile Include="DataAccess\View\WorkflowInstView.cs" />
+    <Compile Include="Enum\ErrorProcessType.cs" />
+    <Compile Include="Enum\FinishType.cs" />
+    <Compile Include="Enum\FlowAction.cs" />
+    <Compile Include="Enum\InstState.cs" />
+    <Compile Include="Enum\OperationType.cs" />
+    <Compile Include="Enum\StepState.cs" />
+    <Compile Include="Enum\StepType.cs" />
+    <Compile Include="Enum\WorkflowPriority.cs" />
+    <Compile Include="Content\WorkflowContent.cs" />
+    <Compile Include="Content\WorkflowModel.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_STEP_INSTMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_STEP_INST_HISMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_WORKFLOW_DEFMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_WORKFLOW_INSTMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_WORKFLOW_INST_HISMap.cs" />
+    <Compile Include="DataAccess\Models\Mapping\WF_WORKFLOW_TRANSFERMap.cs" />
+    <Compile Include="DataAccess\Models\WF_STEP_INST.cs" />
+    <Compile Include="DataAccess\Models\WF_STEP_INST_HIS.cs" />
+    <Compile Include="DataAccess\Models\WF_WORKFLOW_DEF.cs" />
+    <Compile Include="DataAccess\Models\WF_WORKFLOW_INST.cs" />
+    <Compile Include="DataAccess\Models\WF_WORKFLOW_INST_HIS.cs" />
+    <Compile Include="DataAccess\Models\WF_WORKFLOW_TRANSFER.cs" />
+    <Compile Include="Enum\ApprovalOpinion.cs" />
+    <Compile Include="Plug\Creator.cs" />
+    <Compile Include="Plug\AutoProcessor.cs" />
+    <Compile Include="Plug\BaseProcessor.cs" />
+    <Compile Include="Plug\IActor.cs" />
+    <Compile Include="Plug\IConnection.cs" />
+    <Compile Include="Plug\ICustomProcessor.cs" />
+    <Compile Include="Plug\INotifyAction.cs" />
+    <Compile Include="Plug\Instance\ApproveNoConn.cs" />
+    <Compile Include="Plug\Instance\ApproveUIProcess.cs" />
+    <Compile Include="Plug\Instance\ApproveYesConn.cs" />
+    <Compile Include="Plug\Instance\DefaultNotifyAction.cs" />
+    <Compile Include="Plug\Instance\NotifyAction.cs" />
+    <Compile Include="Plug\IPrivateModule.cs" />
+    <Compile Include="Plug\UIProcessor.cs" />
+    <Compile Include="Plug\WorflowDefBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\Auto\AutoMState.cs" />
+    <Compile Include="State\Auto\AutoNRState.cs" />
+    <Compile Include="State\Auto\AutoONPState.cs" />
+    <Compile Include="State\Auto\AutoPNSState.cs" />
+    <Compile Include="State\Auto\AutoRNOState.cs" />
+    <Compile Include="State\Begin\BeginMState.cs" />
+    <Compile Include="State\Begin\BeginNRState.cs" />
+    <Compile Include="State\Begin\BeginONPState.cs" />
+    <Compile Include="State\Begin\BeginPNSState.cs" />
+    <Compile Include="State\Begin\BeginRNOState.cs" />
+    <Compile Include="State\End\EndMState.cs" />
+    <Compile Include="State\End\EndNRState.cs" />
+    <Compile Include="State\End\EndONPState.cs" />
+    <Compile Include="State\End\EndPNSState.cs" />
+    <Compile Include="State\End\EndRNOState.cs" />
+    <Compile Include="State\Exception\NoActorException.cs" />
+    <Compile Include="State\Exception\NoRouteException.cs" />
+    <Compile Include="State\Exception\PlugInException.cs" />
+    <Compile Include="State\Exception\WorkflowException.cs" />
+    <Compile Include="State\InvalidState.cs" />
+    <Compile Include="State\InvalidStateException.cs" />
+    <Compile Include="State\Manual\ManualMState.cs" />
+    <Compile Include="State\Manual\ManualNRState.cs" />
+    <Compile Include="State\Manual\ManualONPState.cs" />
+    <Compile Include="State\Manual\ManualPNSState.cs" />
+    <Compile Include="State\Manual\ManualRNOState.cs" />
+    <Compile Include="State\Merge\MergeNRState.cs" />
+    <Compile Include="State\Merge\MergeONPState.cs" />
+    <Compile Include="State\Merge\MergePNSState.cs" />
+    <Compile Include="State\Merge\MergeRNOState.cs" />
+    <Compile Include="State\MState.cs" />
+    <Compile Include="State\NRState.cs" />
+    <Compile Include="State\PNSState.cs" />
+    <Compile Include="State\Route\RouteMState.cs" />
+    <Compile Include="State\Route\RouteNRState.cs" />
+    <Compile Include="State\Route\RouteONPState.cs" />
+    <Compile Include="State\Route\RoutePNSState.cs" />
+    <Compile Include="State\Route\RouteRNOState.cs" />
+    <Compile Include="State\State.cs" />
+    <Compile Include="Enum\MistakeReason.cs" />
+    <Compile Include="Step\AutoStep.cs" />
+    <Compile Include="Step\BeginStep.cs" />
+    <Compile Include="Step\EndStep.cs" />
+    <Compile Include="Step\ManualStep.cs" />
+    <Compile Include="Step\MergeStep.cs" />
+    <Compile Include="Step\RouteStep.cs" />
+    <Compile Include="Step\Step.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sys\IWorkflowFace.cs" />
+    <Compile Include="Sys\Workflow.cs" />
+    <Compile Include="Sys\WorkflowBuilder.cs" />
+    <Compile Include="Sys\WorkflowConfig.cs" />
+    <Compile Include="Sys\IWorflowBuilder.cs" />
+    <Compile Include="Util\StepUtil.cs" />
+    <Compile Include="Util\WorkflowInstUtil.cs" />
+    <Compile Include="View\MyTopWorkFlowView.cs" />
+    <Compile Include="View\WorkflowDefView.cs" />
+    <Compile Include="xml\ProcessXml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ataw.Framework.Core\Ataw.Framework.Core.csproj">
+      <Project>{7F60CD00-578A-4325-A44F-3BAF8BC129B2}</Project>
+      <Name>Ataw.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ataw.Framework.Web\Ataw.Framework.Web.csproj">
+      <Project>{06B78C67-DB7B-46E1-8B54-1C6964C6DF2E}</Project>
+      <Name>Ataw.Framework.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

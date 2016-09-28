@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="/My97DatePicker/WdatePicker.js"> </script>
+<script type="text/javascript" src="/Areas/WorkFlow/Scripts/MyWork.js"> </script>
+<div class="toolsBox">
+    <div class="toolBtn">
+        <ul>
+            <li style="@ViewData["Handle"]"><a id="btnDetail" href="javascript:void(0)">
+                <img src='@Url.Content("~/Ico/Audit.png")' />处理</a></li>
+            @*<li><a id="Detail" href="javascript:void(0)">
+                <img src='@Url.Content("/Areas/WorkFlow/Ico/magnifier.png")' />查看</a></li>
+            <li><a id="btnEnable" href="javascript:void(0)">
+                <img src='@Url.Content("/Areas/WorkFlow/Ico/arrow_undo.png")' />启用</a></li>
+            <li><a id="btnDisable" href="javascript:void(0)">
+                <img src='@Url.Content("/Areas/WorkFlow/Ico/delete.png")' />禁用</a></li>
+            <li><a id="btnDel" href="javascript:void(0)">
+                <img src='@Url.Content("/Areas/WorkFlow/Ico/cross.png")'>批量删除</a></li>*@
+        </ul>
+    </div>
+    <div class="searchBox" style="@ViewData["Search"]">
+        <ul class="lessSearch">
+            <li class="input_pro">名称</li>
+            <li>
+                <input id="Name" type="text" class="searchInput" /></li>
+            <li class="searcheBtn"><a href="javascript:void(0)" id="search" >
+                <img src='@Url.Content("~/images/searcheBtnImg.gif")' /></a></li>
+        </ul>
+        <ul class="moreSearch">
+            <li>
+                <label>
+                    创建时间从</label><input id="BeginTime" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'EndTime\'||\'2099-01-01\')}'})" /></li>
+            <li>
+                <label>
+                    到</label><input id="EndTime" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'BeginTime\')}',maxDate:'2099-01-01'})" /></li>
+        </ul>
+        <div class="moerBtn" id="searchBtn">
+            更多按钮</div>
+    </div>
+</div>
+<div class="listBox">
+    <table id="list">
+    </table>
+</div>

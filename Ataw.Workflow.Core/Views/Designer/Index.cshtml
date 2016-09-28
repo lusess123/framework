@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title></title>
+    <link href="/Areas/WorkFlow/Content/workflow.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("/Content/themes/gray/easyui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("/Content/themes/icon.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Areas/WorkFlow/Scripts/Designer/jquery-1.4.2.js"></script>
+    @*<script src="/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>*@
+    <script type="text/javascript" src="/Areas/WorkFlow/Scripts/Designer/json.js"></script>
+    <script src="/Scripts/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="/Scripts/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Areas/WorkFlow/Scripts/Designer/StepDef.js"></script>
+    <script type="text/javascript" src="/Areas/WorkFlow/Scripts/Designer/jquery.md5.js"></script>
+    <script type="text/javascript" src="/Areas/WorkFlow/Scripts/Designer/workflow.js"></script>
+    <script src="/Areas/WorkFlow/Scripts/Designer/view.js" type="text/javascript"></script>
+    <script src="/Areas/WorkFlow/Scripts/Designer/UpData.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Areas/WorkFlow/Scripts/Designer/workFlowDef.js"></script>
+    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <!--   <script type="text/javascript" src="js/StepDef.js"></script>-->
+    <script type="text/javascript">
+        $(function () {
+            if ("@ViewBag.shortName" != "-1") {
+                $.get("/Workflow/Designer/GetWorkflowXML", { shortName: "@ViewBag.shortName" }, function (res) {
+                    //var testXml = '<root  name="sss" displayname="dddd" priority="0" issave="0" description=""><node><objectindex type="number">0</objectindex><typeindex type="number">0</typeindex><id type="string">446aa15d57e00907ab0512ad6d157857</id><icon type="string">nodeicon1</icon><nodetype type="number">1</nodetype><text type="string">QQ</text><nodetext type="string">开始</nodetext><x type="number">345</x><y type="number">25</y><width type="number">130</width><height type="number">51</height><inputtype type="number">0</inputtype><outputtype type="number">1</outputtype><zindex type="number">101</zindex><name type="string">QQ</name><creatorregname type="string">QQ</creatorregname><parentlist></parentlist><childlist><childid>f36abde1ac243ae19fac32398fdae4e3</childid></childlist></node><node><objectindex type="number">0</objectindex><typeindex type="number">0</typeindex><id type="string">e427e005f969c831fb21bb6c8b5debab</id><icon type="string">nodeicon2</icon><nodetype type="number">2</nodetype><text type="string">RR</text><nodetext type="string">结束</nodetext><x type="number">345</x><y type="number">210</y><width type="number">130</width><height type="number">51</height><inputtype type="number">2</inputtype><outputtype type="number">0</outputtype><zindex type="number">102</zindex><name type="string">RR</name><plugregname type="string">RR</plugregname><parentlist><parentid>8b3e7a104bb28859f5b1cc7b926e1f2f</parentid><parentid>5780bf8e67f534037d0340a6cc567eac</parentid></parentlist><childlist></childlist></node><node><objectindex type="number">0</objectindex><typeindex type="number">0</typeindex><id type="string">f36abde1ac243ae19fac32398fdae4e3</id><icon type="string">nodeicon3</icon><nodetype type="number">21</nodetype><text type="string">WW</text><nodetext type="string">路由</nodetext><x type="number">333</x><y type="number">97</y><width type="number">130</width><height type="number">51</height><inputtype type="number">2</inputtype><outputtype type="number">2</outputtype><zindex type="number">103</zindex><name type="string">WW</name><parentlist><parentid>446aa15d57e00907ab0512ad6d157857</parentid></parentlist><childlist><childid>8b3e7a104bb28859f5b1cc7b926e1f2f</childid><childid>5780bf8e67f534037d0340a6cc567eac</childid></childlist></node><node><objectindex type="number">0</objectindex><typeindex type="number">0</typeindex><id type="string">5780bf8e67f534037d0340a6cc567eac</id><icon type="string">nodeicon-auto</icon><nodetype type="number">22</nodetype><text type="string">TT</text><nodetext type="string">自动</nodetext><x type="number">566</x><y type="number">152</y><width type="number">130</width><height type="number">51</height><inputtype type="number">2</inputtype><outputtype type="number">1</outputtype><zindex type="number">104</zindex><name type="string">TT</name><plugregname type="string">TT</plugregname><parentlist><parentid>f36abde1ac243ae19fac32398fdae4e3</parentid></parentlist><childlist><childid>e427e005f969c831fb21bb6c8b5debab</childid></childlist></node><node><objectindex type="number">0</objectindex><typeindex type="number">0</typeindex><id type="string">8b3e7a104bb28859f5b1cc7b926e1f2f</id><icon type="string">nodeicon5</icon><nodetype type="number">20</nodetype><text type="string">EE</text><nodetext type="string">人工</nodetext><x type="number">219</x><y type="number">171</y><width type="number">130</width><height type="number">51</height><inputtype type="number">2</inputtype><outputtype type="number">1</outputtype><zindex type="number">105</zindex><name type="string">EE</name><actorregname type="string">EE</actorregname><controllactions><controllaction actionname="2" controlname="2" areaname="2" order="2"></controllaction><controllaction actionname="1" controlname="1" areaname="1" order="1"></controllaction></controllactions><process><uioperationconfig plugin="1" buttoncaption="1" displayname="1" name="1"></uioperationconfig><nonuioperationconfigs><nonuioperationconfig needprompt="false" plugin="3" buttoncaption="3" displayname="3" name="3"></nonuioperationconfig><nonuioperationconfig needprompt="false" plugin="2" buttoncaption="2" displayname="2" name="2"></nonuioperationconfig></nonuioperationconfigs></process><parentlist><parentid>f36abde1ac243ae19fac32398fdae4e3</parentid></parentlist><childlist><childid>e427e005f969c831fb21bb6c8b5debab</childid></childlist></node><linelist><line id="446aa15d57e00907ab0512ad6d157857_f36abde1ac243ae19fac32398fdae4e3"></line><line id="f36abde1ac243ae19fac32398fdae4e3_8b3e7a104bb28859f5b1cc7b926e1f2f"></line><line id="f36abde1ac243ae19fac32398fdae4e3_5780bf8e67f534037d0340a6cc567eac"></line><line id="8b3e7a104bb28859f5b1cc7b926e1f2f_e427e005f969c831fb21bb6c8b5debab"></line><line id="5780bf8e67f534037d0340a6cc567eac_e427e005f969c831fb21bb6c8b5debab"></line></linelist></root>';
+                    workflow.parseXml(createXml(res));
+                });
+            }
+        })
+        // var AtawWfConfig = new Class1();
+    </script>
+    <style>
+        v\:*
+        {
+            behavior: url(#default#VML);
+        }
+    </style>
+</head>
+<body>
+    <div class="line line4">
+    </div>
+    <div class="main title">
+        <div class="left icon1">
+            流程设计器</div>
+        <div class="right">
+            <span class="wenicon"></span><span class="iicon"></span>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <!-- 左侧工具栏 -->
+    <div id="leftmenu" class="setheight">
+        <div class="title noborder border1">
+            <div class="left icon3">
+                工具栏</div>
+            <div class="right">
+                <span class="minicon"></span><span class="maxicon"></span>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="menuborder">
+            <div class="menuitem ticon1 menuitemactive tool" type="select" value="0">
+                选择</div>
+            <div class="menuitem ticon2" onclick="setgrid(this)">
+                栅格</div>
+            <div class="menusplit">
+            </div>
+            <div class="menuitem ticon3" onclick="save()">
+                保存</div>
+            @*            <div class="menuitem ticon4" onclick="fabu()">
+                发布</div>*@
+            <div class="menuitem ticon15" onclick="shanchu()">
+                删除</div>
+            <div class="menusplit">
+            </div>
+            <div class="menuitem ticon5" onclick="daoru()">
+                导入</div>
+            <div class="menuitem ticon6" onclick="rebuild()">
+                重建</div>
+            <div class="menusplit">
+            </div>
+            <div class="menuitem ticon14 tool" type="line" value="100">
+                连接</div>
+            <div class="menuitem ticon7 tool" type="tool" value="1">
+                开始</div>
+            <div class="menuitem ticon8 tool" type="tool" value="2">
+                结束</div>
+            <div class="menuitem ticon12 tool" type="tool" value="20">
+                人工</div>
+            <div class="menuitem ticon9 tool" type="tool" value="21">
+                路由</div>
+            <div class="menuitem ticon-auto tool" type="tool" value="22">
+                自动</div>
+            <div class="menusplit">
+            </div>
+            <div class="menusplit">
+            </div>
+            <div class="menusplit">
+            </div>
+            <!--<div class="menuitem ticon9 tool" type="tool" value="3">分支</div>
+				<div class="menuitem ticon10 tool" type="tool" value="4">合并</div>
+				<div class="menuitem ticon12 tool" type="tool" value="5">任务</div>-->
+            <div class="menusplit">
+            </div>
+            <div class="menusplit">
+            </div>
+        </div>
+    </div>
+    <!-- 左侧工具栏 -->
+    <!-- 拖动左右大小div -->
+    <div id="dragdiv" class="setheight">
+    </div>
+    <!-- 绘图区域 -->
+    <div id="paintarea" class="setheight">
+    </div>
+    <!--
+<v:line class="vline" from="50,50" to="150,150" >
+				<v:stroke EndArrow="Classic"/>
+			</v:line>
+-->
+    <!-- 拖动上下大小div -->
+    <div id="dragy">
+    </div>
+    <!-- 属性 -->
+    <div id="attribute" style="height: 30%">
+        <!--        <div>
+            显示名称：
+            <input id="tbDisplayName" type="text" />
+            <input id="Button1" onclick="Set();" type="button" value="button" /></div>-->
+    </div>
+    <div style="display: none;">
+        <div class="node" id="demonode">
+            <div class="left l">
+            </div>
+            <div class="left c">
+                <div class="icon">
+                    <div class="t">
+                        &lt;&lt;tasknode&gt;&gt;&nbsp;</div>
+                    <div class="tt">
+                    </div>
+                </div>
+            </div>
+            <div class="left r">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    @Html.Partial("StepDiv");
+    <div id="designerWindow" class="easyui-window" title="工作流模式" closed="true" collapsible="false"
+        minimizable="false" maximizable="false" style="width: 690px">
+        <div id="searchBar">
+            名称:<input type="text" id="name" />
+            创建时间从:<input id="BeginTime" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'EndTime\'||\'2099-01-01\')}'})" />
+            到:<input id="EndTime" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'BeginTime\')}',maxDate:'2099-01-01'})" />
+            <a href="javascript:void(0)" id="search" class="easyui-linkbutton">查询</a>
+        </div>
+        <table id="list" toolbar="#searchBar">
+        </table>
+    </div>
+</body>
+</html>

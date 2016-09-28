@@ -1,0 +1,4 @@
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Right.Interface\bin\Release\Ataw.Right.Interface.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Right.Interface\bin\Release\Ataw.Right.Interface.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Right.Interface\obj\Release\Ataw.Right.Interface.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Right.Interface\obj\Release\Ataw.Right.Interface.pdb

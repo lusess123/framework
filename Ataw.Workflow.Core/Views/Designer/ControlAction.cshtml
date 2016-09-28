@@ -1,0 +1,94 @@
+﻿<script type="text/javascript">
+    var actionresultTemplate = "<div><span>Order:<input type=\"text\" name=\"order\"/></span><span>标题:<input type=\"text\" name=\"title\"/></span><span>Area名:<input type=\"text\" name=\"area\"/></span><span>控制器名:<input type=\"text\" name=\"controll\"/></span><span>方法名:<input type=\"text\" name=\"action\"/></span>"
+    + "<span>类型:<select name=\"showkind\"><option value=\"1\">Tab</option><option value=\"2\">Tile</option></span>"
+    + "<a href=\"javascript:void(0)\" mark=\"delControllAction\"><img src='/Content/themes/icons/no.png' alt='删除' title='删除' /></a></div>";
+    function initControllAction(controllActions) {
+        $("#addOption").prevAll().remove();
+        if (controllActions != undefined && controllActions !== "") {
+            var cas = eval("(" + controllActions + ")");
+            var art;
+            var select;
+            for (var i = 0; i < cas.length; i++) {
+                if (cas[i].ShowKind == 1) {
+                    select = "<span>类型:<select name=\"showkind\"><option value=\"1\" selected=\"selected\">Tab</option><option value=\"2\">Tile</option></select></span>"
+                } else {
+                    select = "<span>类型:<select name=\"showkind\"><option value=\"1\">Tab</option><option value=\"2\" selected=\"selected\">Tile</option></select></span>"
+                }
+                art = "<div><span>Order:<input type=\"text\"  name=\"order\" value=\"" + cas[i].Order + "\"/></span><span>标题:<input type=\"text\"  name=\"title\" value=\"" + cas[i].Title + "\"/></span><span>Area名:<input type=\"text\" name=\"area\" value=\"" + cas[i].AreaName + "\"/></span> <span>控制器名:<input type=\"text\" name=\"controll\" value=\"" + cas[i].ControllName + "\"/></span><span>方法名:<input type=\"text\" name=\"action\" value=\"" + cas[i].ActionName + "\"/></span>"
+                    + select + "<a href=\"javascript:void(0)\" mark=\"delControllAction\"><img src='/Content/themes/icons/no.png' alt='删除' title='删除' /></a></div>";
+                $("#addOption").before(art);
+            }
+        }
+        else {
+            $("#addOption").before(actionresultTemplate);
+        }
+    }
+    $(function () {
+        var that;
+        $("#addOption").click(function () {
+            $("#addOption").before(actionresultTemplate);
+        });
+        $("a[mark='delControllAction']").live("click", function () {
+            $(this).parent().remove();
+        });
+        $("input[name='controllActions']").live("click", function () {
+            that = this;
+            initControllAction($(this).val());
+            $("#controllActionWindow").window("open");
+        })
+        $("#saveControllAction").click(function () {
+            var divs = $("#addOption").prevAll();
+            var controllActionResult = [];
+            var controllAction;
+            for (var i = 0; i < divs.length; i++) {
+                controllAction = new ControllAction();
+                controllAction.Order = $(divs[i]).find("input[name='order']").val();
+                if (controllAction.Order == "") {
+                    $(divs[i]).find("input[name='order']").focus();
+                    return;
+                }
+                if (isNaN(controllAction.Order)) {
+                    $(divs[i]).find("input[name='order']").val("");
+                    $(divs[i]).find("input[name='order']").focus();
+                    return;
+                }
+                controllAction.Title = $(divs[i]).find("input[name='title']").val();
+                if (controllAction.Title == "") {
+                    $(divs[i]).find("input[name='title']").focus();
+                    return;
+                }
+                controllAction.AreaName = $(divs[i]).find("input[name='area']").val();
+                if (controllAction.AreaName == "") {
+                    $(divs[i]).find("input[name='area']").focus();
+                    return;
+                }
+                controllAction.ControllName = $(divs[i]).find("input[name='controll']").val();
+                if (controllAction.ControllName == "") {
+                    $(divs[i]).find("input[name='controll']").focus();
+                    return;
+                }
+                controllAction.ActionName = $(divs[i]).find("input[name='action']").val();
+                if (controllAction.ActionName == "") {
+                    $(divs[i]).find("input[name='action']").focus();
+                    return;
+                }
+                controllAction.ShowKind = parseInt($(divs[i]).find("select[name='showkind']").val());
+                controllActionResult.push(controllAction);
+            }
+            $(that).val($.toJSON(controllActionResult));
+            $(that).trigger("change");
+            $("#controllActionWindow").window("close");
+        })
+        $("#cancelControllAction").click(function () {
+            $("#controllActionWindow").window("close");
+        })
+    })
+</script>
+<div id="controllActionWindow" class="easyui-window" closed="true" title="controllAction"
+    style="width: 1100px; height: 300px">
+    <a href="javascript:void(0)" id="addOption">增添</a>
+    <div>
+        <a href="javascript:void(0)" class="easyui-linkbutton" id="saveControllAction">确定</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" id="cancelControllAction">取消</a>
+    </div>
+</div>

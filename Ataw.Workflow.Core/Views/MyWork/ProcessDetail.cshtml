@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "ProcessDetail";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+@using Ataw.Workflow.Web;
+@using Ataw.Framework.Core;
+@model ProcessModel
+<script type="text/javascript">
+
+    function UIOperate(plugName) {
+        AtawWorkflowSubmit();
+        //  alert(plugName);
+    }
+    function NonUIOperate(plugName) {
+        //     alert(plugName);
+    }
+    //委托
+    var delegate = function () {
+        //委托的方法列表  
+        var ArrayFuction = [];
+        //添加方法，相当于+=  
+        this.AddF = function (f) {
+            if (typeof (f) === "function") {
+                ArrayFuction.push(f);
+            }
+            else {
+                throw new Error("委托只能接受方法");
+            }
+        };
+        //移除方法，相当于-=  
+        this.RemoveF = function (f) {
+            if (typeof (f) === "function") {
+                var length = ArrayFuction.length;
+                for (var i = 0; i < length; i++) {
+                    if (ArrayFuction[i] == f) {
+                        ArrayFuction = ArrayFuction.splice(i, 1);
+                    }
+                }
+            }
+            else {
+                throw new Error("委托只能接受方法");
+            }
+        };
+        //调用委托下所有方法  
+        this.Run = function () {
+            var rs = [];
+            for (var item in ArrayFuction) {
+                var r = ArrayFuction[item]();
+                rs.push(r);
+            }
+            return rs;
+        }
+    }
+    var del = new delegate(); //创建委托; //委托对象
+    //验证
+    function Validate() {
+        return $("body").validationEngine("validate");
+    }
+    //提交数据处理
+    function AtawWorkflowSubmit() {
+        //return alert(Validate());
+        if (!Validate()) {
+            return false;
+        }
+        var url = "/workflow/MyWork/PostDs";
+        var data = $(".AC-K").CreateDataSet();
+        $(".AC-K").PostDataSet({
+            url: url,
+            name: "WorkflowProcess",
+            data: $.toJSON(data),
+            success_fun: function (a) {
+                var _obj = $.parseJSON(a);
+                ActionResponse_Commond_Fun(_obj);
+
+            }
+        });
+    }
+</script>
+<script src="/Areas/WorkFlow/Scripts/json.js" type="text/javascript"></script>
+<script src="@Url.Content("/Scripts/Core/postDataSet.js")" type="text/javascript"></script>
+<script src="@Url.Content("/Scripts/Core/ataw-action.js")" type="text/javascript"></script>
+<script type="text/javascript" src="/Areas/WorkFlow/Scripts/WorkFlowInstDetail.js"> </script>
+<div class="toolsBox">
+    <div class="toolBtn">
+        <ul>
+            @if (Model.UIOperation != null)
+            {
+                <li><a title="@Model.UIOperation.ButtonCaption" id="@Model.UIOperation.Name"  href="javascript:UIOperate('@Model.UIOperation.PlugIn')">
+                    <img src='@Url.Content("~/Ico/application_edit.png")' alt="" />@Model.UIOperation.DisplayName
+                </a></li>
+            }
+            @foreach (var opr in Model.NonUIOperations)
+            {
+                <li><a   title="@opr.ButtonCaption"  id="@opr.Name" href="javascript:NonUIOperate('@opr.PlugIn')">@opr.DisplayName
+                </a></li>
+            }
+        </ul>
+    </div>
+</div>
+@{Html.RenderPartial("../UserControl/DetailBody",Model.DetailModel);}

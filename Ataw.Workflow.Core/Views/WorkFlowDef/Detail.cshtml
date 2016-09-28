@@ -1,0 +1,61 @@
+﻿@model Ataw.Workflow.Core.DataAccess.WF_WORKFLOW_DEF
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<div class="formBox">
+    <h2>
+        组织机构详细信息</h2>
+    <table class="detailBox">
+        <tr>
+            <td class="value">
+                标识名
+            </td>
+            <td>
+                @Model.WD_SHORT_NAME
+            </td>
+            <td class="value">
+                名称
+            </td>
+            <td>
+                @Model.WD_NAME
+            </td>
+            <td class="value">
+               描述
+            </td>
+            <td>
+                @Model.WD_DESCRIPTION
+            </td>
+        </tr>
+        <tr>
+            <td class="value">
+                版本号
+            </td>
+            <td>
+                @Model.WD_VERSION
+            </td>
+            <td class="value">
+                版本描述
+            </td>
+            <td>
+                @Model.WD_VERSION_DESC
+            </td>
+            <td class="value">
+               创建时间
+            </td>
+            <td>
+                @Model.WD_CREATE_DATE.ToString("yyyy-MM-dd HH:mm")
+            </td>
+        </tr>
+         
+       
+         
+    </table>
+    <div class="functionCon">
+        @*<input type="button" value="打印" class="inputBtn" />*@
+     @*   <input type="button" value="编辑" class="inputBtn" />*@
+        <a class="functionBtn" onclick="javascript:history.go(-1);">返回</a>
+        @*<input type="button" value="返回" class="inputBtn" onclick="javascript:history.go(-1);" />*@
+    </div>
+</div>

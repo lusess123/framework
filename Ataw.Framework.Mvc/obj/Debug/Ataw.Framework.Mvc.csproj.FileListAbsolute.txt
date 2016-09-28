@@ -1,0 +1,8 @@
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\bin\Debug\Ataw.Framework.Mvc.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\bin\Debug\Ataw.Framework.Mvc.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\bin\Debug\System.Web.Mvc.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\bin\Debug\System.Web.Mvc.xml
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\obj\Debug\Ataw.Framework.Mvc.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\obj\Debug\Ataw.Framework.Mvc.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Mvc\obj\Debug\Ataw.Framework.Mvc.csprojResolveAssemblyReference.cache

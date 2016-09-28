@@ -1,0 +1,149 @@
+﻿@model Ataw.Workflow.Core.DataAccess.WF_WORKFLOW_INST
+@{
+    ViewBag.Title = "Detail";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript" src="/Areas/WorkFlow/Scripts/WorkFlowInstDetail.js"> </script>
+<div class="toolsBox">
+    <div class="toolBtn">
+        <ul>
+            <li><a id="btnRetry" href="javascript:void(0)">重试</a></li>
+            <li><a id="btnStop" href="javascript:void(0)">终止</a></li>
+            <li><a id="btnDeblock" href="javascript:void(0)">解锁</a></li>
+            <li><a id="btnRollback" href="javascript:void(0)">回退</a></li>
+        </ul>
+    </div>
+</div>
+@*<div class="oabasicInfor">
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>流程模式名：</dt>
+            <dd>@Model.WI_WD_NAME</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>流程名称：</dt>
+            <dd>
+                @Model.WI_NAME
+            </dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>流程内容：</dt>
+            <dd>
+                @Model.WI_CONTENT_XML
+            </dd>
+        </dl>
+    </div>
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>流程创建日期：</dt>
+            @if (@Model.WI_CREATE_DATE != null)
+            { 
+                <dd>@((DateTime)Model.WI_CREATE_DATE).ToString("yyyy-MM-dd HH:mm")</dd> 
+            }
+            else
+            { 
+                <dd>
+                </dd>
+            }
+        </dl>
+        <dl class="oainfor">
+            <dt>创建人：</dt>
+            <dd>
+                @Model.WI_CREATE_USER</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>结束日期：</dt>
+            @if (@Model.WI_END_DATE != null)
+                        { 
+                <dd>@((DateTime)Model.WI_END_DATE).ToString("yyyy-MM-dd HH:mm")</dd> 
+                        }
+                        else
+                        { 
+                <dd>
+                </dd>
+                        }
+        </dl>
+    </div>
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>结束人：</dt>
+            <dd>@Model.WI_END_USER</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>上一人工步骤名称：</dt>
+            <dd>@Model.WI_LAST_MANUAL_NAME</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>当前步骤名称：</dt>
+            <dd>@Model.WI_CURRENT_STEP_NAME</dd>
+        </dl>
+    </div>
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>发送人：</dt>
+            <dd>@Model.WI_SEND_ID</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>发送时间：</dt>
+            <dd>@Model.WI_SEND_DATE</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>接收人：</dt>
+            <dd>@Model.WI_RECEIVE_ID</dd>
+        </dl>
+    </div>
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>接收时间：</dt>
+            <dd>@Model.WI_RECEIVE_DATE</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>状态：</dt>
+            <dd>@Model.WI_STATUS</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>错误原因：</dt>
+            <dd>@Model.WI_ERROR_TYPE</dd>
+        </dl>
+    </div>
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>是否超时：</dt>
+            <dd>@Model.WI_IS_TIMEOUT</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>超时时间:</dt>
+            <dd>@Model.WI_TIMEOUT_DATE
+            </dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>重试次数:</dt>
+            <dd>@Model.WI_RETRY_TIMES
+            </dd>
+        </dl>
+    </div>
+    <div class="oabasic">
+        <dl class="oainfor">
+            <dt>最大重试次数：</dt>
+            <dd>@Model.WI_MAX_RETRY_TIMES</dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>下一次执行时间:</dt>
+            <dd>@Model.WI_NEXT_EXE_DATE
+            </dd>
+        </dl>
+        <dl class="oainfor">
+            <dt>信息1:</dt>
+            <dd>@Model.WI_INFO1
+            </dd>
+        </dl>
+    </div>
+</div>*@
+<div class="listBox">
+    <table id="list" instId="@Model.WI_ID">
+    </table>
+</div>
+<div class="listBox">
+    <table id="approveList" instId="@Model.WI_ID">
+    </table>
+</div>

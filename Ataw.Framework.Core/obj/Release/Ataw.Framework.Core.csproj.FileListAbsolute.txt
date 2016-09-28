@@ -1,0 +1,17 @@
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\Ataw.Framework.Core.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\Ataw.Framework.Core.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\EntityFramework.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\Microsoft.Practices.Unity.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\Shuttle.ESB.Core.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\SocketIOClient.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\WebSocket4Net.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\Newtonsoft.Json.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\SocketIOClient.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\bin\Release\WebSocket4Net.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Release\Ataw.Framework.Core.Cache.Memcached.StringMessages.resources
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Release\Ataw.Framework.Core.csproj.GenerateResource.Cache
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Release\Ataw.Framework.Core.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Release\Ataw.Framework.Core.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Framework.Core\obj\Release\Ataw.Framework.Core.csprojResolveAssemblyReference.cache

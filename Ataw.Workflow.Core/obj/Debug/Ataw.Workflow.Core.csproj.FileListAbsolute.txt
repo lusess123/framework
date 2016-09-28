@@ -1,0 +1,9 @@
+D:\AtawSources\Ataw.Platform\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.dll.config
+D:\AtawSources\Ataw.Platform\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.dll
+D:\AtawSources\Ataw.Platform\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.pdb
+D:\AtawSources\Products\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.dll.config
+D:\AtawSources\Products\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.dll
+D:\AtawSources\Products\_output\library\Ataw.Workflow.Core\Ataw.Workflow.Core.pdb
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.csprojResolveAssemblyReference.cache
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.dll
+D:\AtawSources\Ataw.Platform\src\framework\Ataw.Workflow.Core\obj\Debug\Ataw.Workflow.Core.pdb

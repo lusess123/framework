@@ -1,0 +1,41 @@
+﻿@using Ataw.Workflow.Web;
+@model DetailModel
+<script type="text/javascript">
+    $(function () {
+        // SetMap();
+        $(".NewIndexTab").click(function () {
+
+            $("#content").height("auto");
+        });
+    })
+</script>
+<input type="hidden"   DS="PARAM.WID.0" ACK="Hidden" class="AC-K " value="@Model.WorkflowInstId" />
+<div class="listBox">
+    <h2 class="MyworkflowTitle">@Model.Title</h2>
+    @foreach (var caction in Model.TileControlActions)
+    {           
+        <div class="easyui-panel" title="@caction.Title" data-options="closable:true,  
+                collapsible:true">
+            @Html.Action(caction.ActionName, caction.ControlName, new { area = caction.AreaName, contentxml = Model.WorkflowContent, ReceiveTime = Model.ReceiveTime, ProcessTime = Model.ProcessTime })
+        </div>
+    }
+    <div class="easyui-tabs NewIndexTab" id="tt" style="margin-bottom: 15px;">
+        <div title="部分流程图" style="padding: 20px;">
+            @Html.Partial("/Areas/WorkFlow/Views/UserControl/WorkFlowMap.cshtml", Model.MapModel)
+        </div>
+        <div title="步骤列表" style="overflow: auto; padding: 20px;">
+            <table id="list" instId="@Model.WorkflowInstId">
+            </table>
+        </div>
+        <div title="审批历史" style="padding: 20px;">
+            <table id="approveList" instId="@Model.WorkflowInstId">
+            </table>
+        </div>
+        @foreach (var caction in Model.TabControlActions)
+        {              
+            <div title="@caction.Title" style="padding: 20px;">
+                @Html.Action(caction.ActionName, caction.ControlName, new { area = caction.AreaName, contentxml = Model.WorkflowContent })
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06B78C67-DB7B-46E1-8B54-1C6964C6DF2E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ataw.Framework.Web</RootNamespace>
+    <AssemblyName>Ataw.Framework.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Products\_output\library\Ataw.Framework.Web\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\out\Ataw.Framework.Web\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Products\_output\lib\EF\AtawEf\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Products\_output\Web\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\_output\Web\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\CalendarController.cs" />
+    <Compile Include="Controller\CardController.cs" />
+    <Compile Include="Controller\DeskController.cs" />
+    <Compile Include="Controller\EditorUploadJsonController.cs" />
+    <Compile Include="Controller\FileController.cs" />
+    <Compile Include="Controller\MapCutterController.cs" />
+    <Compile Include="Controller\ModuleControl.cs" />
+    <Compile Include="Controller\MomeryController.cs" />
+    <Compile Include="Controller\PlugController.cs" />
+    <Compile Include="Controller\SelectorController.cs" />
+    <Compile Include="Controller\SimpleCutImageController.cs" />
+    <Compile Include="Controller\UploaderController.cs" />
+    <Compile Include="Controller\WebAreaRegistration.cs" />
+    <Compile Include="Controller\EditorFileManagerController.cs" />
+    <Compile Include="Controller\WebServiceController.cs" />
+    <Compile Include="Controller\ClubCardController.cs" />
+    <Compile Include="Net\PostSubmitter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\PageViewUtil.cs" />
+    <Compile Include="Util\ThumbnailUtil.cs" />
+    <Compile Include="Util\WebCommonClass.cs" />
+    <Compile Include="Util\ImageClass.cs" />
+    <Compile Include="Util\WebUtil.cs" />
+    <Compile Include="Web\AtawWebAppRegistration.cs" />
+    <Compile Include="Web\MvcActionModel.cs" />
+    <Compile Include="Web\PageFlyweight.cs" />
+    <Compile Include="Web\Right\AtawAuthorzation.cs" />
+    <Compile Include="Web\AtawBaseController.cs" />
+    <Compile Include="Web\BaseLogonUserInfo.cs" />
+    <Compile Include="Web\CookieUtil.cs" />
+    <Compile Include="Web\Right\AtawRightFilter.cs" />
+    <Compile Include="Web\Right\FunFilterType.cs" />
+    <Compile Include="Web\Right\FunRightFilter.cs" />
+    <Compile Include="Web\GlobalContext.cs" />
+    <Compile Include="Web\GlobalVariable.cs" />
+    <Compile Include="Web\Right\IAuthorzation.cs" />
+    <Compile Include="Web\Right\ILogonUserInfo.cs" />
+    <Compile Include="Web\Right\AtawLoginFilter.cs" />
+    <Compile Include="Web\Right\MenuRightFilter.cs" />
+    <Compile Include="Web\Right\RightFilter.cs" />
+    <Compile Include="Web\WebSiteHomeAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enum\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ataw.Framework.Core\Ataw.Framework.Core.csproj">
+      <Project>{7f60cd00-578a-4325-a44f-3baf8bc129b2}</Project>
+      <Name>Ataw.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ataw.Right.Interface\Ataw.Right.Interface.csproj">
+      <Project>{d0676fc3-d9e6-4e35-89cf-4d2720cb3ce4}</Project>
+      <Name>Ataw.Right.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
